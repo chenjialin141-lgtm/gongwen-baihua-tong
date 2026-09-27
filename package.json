@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "name": "gongwen-baihua-tong",
+  "version": "1.0.0",
+  "description": "公文白話通：政府公文多語翻譯助手（Vercel 免費後端代理）"
+}

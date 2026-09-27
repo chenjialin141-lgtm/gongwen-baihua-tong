@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="公文白話通：貼上台灣政府公文或法規，翻譯成繁體白話、簡體中文及 8 種東南亞語言（馬來語、印尼語、越南語、泰語、菲律賓語、緬甸語、高棉語、寮語），並整理你需要的文件與下一步。給新住民、跨國青年與新住民子女的小工具。">
+<title>公文白話通｜政府公文翻譯助手（繁體白話・簡體・8 種東南亞語言）</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E7A68'/%3E%3Cpath d='M19 16h22a4 4 0 0 1 4 4v26h-26a4 4 0 0 1-4-4V20a4 4 0 0 1 4-4z' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M26 30h14M26 37h9' stroke='%23fff' stroke-width='3.4' stroke-linecap='round'/%3E%3Ccircle cx='46' cy='17' r='8' fill='%23E89B3C'/%3E%3Cpath d='M46 13v8M42 17h8' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+Myanmar&amp;family=Noto+Sans+Khmer&amp;family=Noto+Sans+Lao&amp;family=Noto+Sans+Thai&amp;display=swap">
+<style>
+/* ===== Token 體系 ===== */
+:root{
+  --bg:#F5F0E6;
+  --bg-soft:#FBF8F1;
+  --card:#FFFFFF;
+  --ink:#26241F;
+  --muted:#6E6A5F;
+  --line:#E3DCCD;
+  --teal:#0E7A68;
+  --teal-deep:#0A5C4F;
+  --teal-ink:#06453B;
+  --teal-soft:#E1F0EB;
+  --amber:#E89B3C;
+  --amber-deep:#A96A1C;
+  --amber-soft:#FAEEDC;
+  --red:#B3432E;
+  --red-soft:#FBE9E5;
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow:0 10px 30px rgba(38,36,31,.08);
+  --shadow-lg:0 22px 60px rgba(38,36,31,.16);
+  --font:'Noto Sans TC','Noto Sans Myanmar','Noto Sans Khmer','Noto Sans Lao','Noto Sans Thai','Myanmar Text','Khmer UI','Lao UI','Leelawadee UI','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+}
+/* ===== 基礎 ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block}
+a{color:var(--teal-deep)}
+button{font-family:inherit}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:100;background:var(--teal-deep);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:16px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.25;margin:0}
+p{margin:0}
+/* ===== 頁首 ===== */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(245,240,230,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:14px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.brand-mark{width:38px;height:38px;border-radius:11px;background:var(--teal);display:grid;place-items:center;color:#fff;box-shadow:0 4px 12px rgba(14,122,104,.28)}
+.brand-text{font-weight:900;font-size:18px;line-height:1.15;letter-spacing:.01em}
+.brand-text small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.06em}
+.nav{margin-left:auto;display:flex;gap:2px}
+.nav a{padding:8px 13px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;transition:background .15s,color .15s}
+.nav a:hover{background:var(--teal-soft);color:var(--teal-deep)}
+.header-actions{display:flex;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:border-color .15s,color .15s,transform .1s}
+.icon-btn:hover{border-color:var(--teal);color:var(--teal)}
+.icon-btn:active{transform:scale(.95)}
+/* ===== Hero ===== */
+.hero{padding:72px 0 36px}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--teal-deep);background:var(--teal-soft);border:1px solid rgba(14,122,104,.18);padding:7px 14px;border-radius:999px}
+.hero-eyebrow svg{width:15px;height:15px}
+.hero h1{font-size:54px;font-weight:900;letter-spacing:-.015em;margin:20px 0 18px}
+.hero h1 em{font-style:normal;color:var(--teal);position:relative;white-space:nowrap}
+.hero-sub{font-size:18px;color:var(--muted);max-width:56ch;line-height:1.85}
+.hero-sub b{color:var(--ink)}
+.hero-stats{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 20px;box-shadow:0 4px 14px rgba(38,36,31,.05)}
+.stat b{display:block;font-size:24px;font-weight:900;color:var(--teal-deep);line-height:1.2}
+.stat span{font-size:13px;color:var(--muted)}
+.hero-motif{position:relative}
+.motif-ring{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(232,155,60,.16),rgba(14,122,104,.10) 60%,transparent 75%)}
+.motif-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lg);padding:26px 24px;max-width:420px;margin:0 auto}
+.motif-doc{background:var(--teal-soft);border-radius:14px;padding:18px;border:1px solid rgba(14,122,104,.16)}
+.motif-doc .mline{height:9px;border-radius:6px;background:rgba(14,122,104,.32);margin-bottom:10px}
+.motif-doc .mline:last-child{width:62%;margin-bottom:0}
+.motif-arrow{display:grid;place-items:center;padding:12px 0;color:var(--amber-deep)}
+.motif-langs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mlang{border-radius:12px;padding:12px 6px;text-align:center;font-size:13px;font-weight:700;line-height:1.4}
+.mlang b{display:block;font-size:15px}
+.mlang.tw{background:var(--teal-deep);color:#fff}
+.mlang.ms{background:var(--amber);color:var(--ink)}
+.mlang.cn{background:var(--teal-soft);color:var(--teal-ink)}
+/* ===== 工具區 ===== */
+.tool-section{padding:20px 0 72px}
+.tool-panel{background:linear-gradient(160deg,#0D6E5D 0%,#0A5C4F 55%,#08503F 100%);border-radius:26px;padding:34px 34px 30px;box-shadow:var(--shadow-lg);color:#fff;position:relative;overflow:hidden}
+.tool-panel::before{content:'';position:absolute;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(232,155,60,.20),transparent 65%);pointer-events:none}
+.tool-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;position:relative}
+.tool-head h2{font-size:26px;font-weight:900}
+.tool-head p{margin-top:6px;color:rgba(255,255,255,.78);font-size:15px}
+.mode-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;white-space:nowrap;max-width:260px}
+.mode-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.mode-pill.online .dot{background:#7CE0B8}
+.mode-pill span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lang-picker-wrap{margin:22px 0 12px;position:relative}
+.lang-picker{display:flex;gap:8px;flex-wrap:wrap}
+.lang-opt{appearance:none;border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.08);color:rgba(255,255,255,.92);font-size:14px;font-weight:700;padding:9px 16px;border-radius:14px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;text-align:left;min-width:104px}
+.lang-opt:hover{border-color:rgba(255,255,255,.55)}
+.lang-opt.active{background:#fff;color:var(--teal-deep);border-color:#fff}
+.lang-opt small{display:block;font-size:10.5px;font-weight:600;opacity:.72;margin-top:1px;letter-spacing:.02em;white-space:nowrap}
+.lang-opt.active small{color:var(--teal-deep);opacity:.8}
+.quick-row{display:flex;align-items:center;gap:8px;margin:0 0 10px;flex-wrap:wrap}
+.quick-btn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;font-size:12.5px;font-weight:700;padding:6px 14px;border-radius:999px;cursor:pointer;transition:background .15s}
+.quick-btn:hover{background:rgba(255,255,255,.22)}
+.lang-count{font-size:12.5px;color:rgba(255,255,255,.75);font-weight:700}
+.lang-note{font-size:12px;color:rgba(255,255,255,.6);margin-top:8px}
+.tool-panel textarea{width:100%;min-height:200px;border:0;border-radius:16px;padding:18px 20px;font-family:inherit;font-size:15.5px;line-height:1.8;color:var(--ink);background:#fff;resize:vertical;box-shadow:inset 0 0 0 2px transparent;transition:box-shadow .15s}
+.tool-panel textarea:focus{outline:none;box-shadow:inset 0 0 0 3px var(--amber)}
+.tool-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap}
+.detect-chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);border-radius:999px;padding:5px 13px}
+.detect-chip b{color:var(--amber)}
+.char-count{font-size:12.5px;color:rgba(255,255,255,.6)}
+.sample-row{display:flex;align-items:center;gap:8px;margin:16px 0;flex-wrap:wrap}
+.sample-label{font-size:13px;color:rgba(255,255,255,.7);font-weight:500}
+.sample-btn{border:1px dashed rgba(255,255,255,.4);background:transparent;color:rgba(255,255,255,.92);font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;transition:background .15s,border-color .15s}
+.sample-btn:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.run-btn{width:100%;border:0;border-radius:16px;background:var(--amber);color:var(--ink);font-size:18px;font-weight:900;padding:16px 20px;cursor:pointer;transition:transform .1s,box-shadow .15s,filter .15s;box-shadow:0 10px 26px rgba(0,0,0,.22);letter-spacing:.04em}
+.run-btn:hover{filter:brightness(1.06);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.run-btn:active{transform:translateY(1px)}
+.run-btn:disabled{opacity:.6;cursor:wait}
+/* 載入步驟 */
+.loading{margin-top:18px;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 18px}
+.loading-track{height:8px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden;margin-bottom:12px}
+.loading-bar{height:100%;width:0%;border-radius:6px;background:linear-gradient(90deg,var(--amber),#F6C37E);transition:width .45s ease}
+.loading-step{display:flex;align-items:center;gap:10px;font-size:14.5px;color:rgba(255,255,255,.9);padding:4px 0}
+.loading-step .dot{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.5);flex-shrink:0;display:grid;place-items:center;color:transparent}
+.loading-step.done .dot{background:var(--amber);border-color:var(--amber);color:var(--ink)}
+.loading-step.done .dot svg{width:10px;height:10px}
+.loading-step.now .dot{border-color:var(--amber);border-top-color:transparent;animation:spin .7s linear infinite}
+.loading-step.now .lbl{font-weight:700;color:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ===== 結果 ===== */
+.result-wrap{margin-top:26px}
+.result-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.result-tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.result-tags span{font-size:13px;font-weight:700;padding:6px 13px;border-radius:999px;background:var(--teal-soft);color:var(--teal-ink);border:1px solid rgba(14,122,104,.18)}
+.result-tags span.lang{background:var(--amber-soft);color:var(--amber-deep);border-color:rgba(169,106,28,.22)}
+.result-actions{display:flex;gap:8px;flex-wrap:wrap}
+.result-actions button,.ghost-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13.5px;font-weight:700;padding:9px 15px;border-radius:12px;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.result-actions button:hover,.ghost-btn:hover{border-color:var(--teal);color:var(--teal-deep);background:var(--teal-soft)}
+.result-actions button svg,.ghost-btn svg{width:16px;height:16px}
+.saved-note{font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.saved-note svg{width:14px;height:14px;color:var(--teal)}
+.demo-note{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border:1px solid rgba(169,106,28,.25);border-radius:var(--radius-sm);padding:13px 16px;font-size:14px;color:#7A4F12;margin-bottom:16px}
+.demo-note svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;color:var(--amber-deep)}
+.tab-bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+.tab-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:800;padding:9px 18px;border-radius:999px;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.tab-btn:hover{border-color:var(--teal);color:var(--teal-deep)}
+.tab-btn.active{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+.lang-panel{display:none}
+.lang-panel.active{display:block}
+.panel-empty{background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:44px 24px;text-align:center;color:var(--muted);font-size:15px;line-height:1.9}
+.panel-empty b{color:var(--teal-deep)}
+.result-block{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin-bottom:18px}
+.result-block h3{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:900;margin-bottom:14px;color:var(--teal-ink)}
+.result-block h3 svg{width:20px;height:20px;color:var(--teal)}
+.translation{font-size:16.5px;line-height:2;white-space:pre-wrap;word-break:break-word}
+.translation mark{background:var(--amber-soft);color:inherit;padding:0 3px;border-radius:4px;border-bottom:2px solid var(--amber)}
+.keyinfo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.ki-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 18px;box-shadow:var(--shadow)}
+.ki-card .ki-ico{width:38px;height:38px;border-radius:11px;background:var(--teal-soft);color:var(--teal-deep);display:grid;place-items:center;margin-bottom:10px}
+.ki-card .ki-ico svg{width:20px;height:20px}
+.ki-card .ki-label{font-size:12.5px;font-weight:700;color:var(--muted);letter-spacing:.04em}
+.ki-card .ki-val{font-size:15px;font-weight:700;margin-top:3px;line-height:1.5;word-break:break-word}
+.ki-card .ki-val.empty{color:var(--muted);font-weight:500}
+.doc-list,.step-list{list-style:none;margin:0;padding:0}
+.doc-list li{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.doc-list li:last-child{border-bottom:0}
+.doc-num{width:30px;height:30px;border-radius:9px;background:var(--amber-soft);color:var(--amber-deep);font-weight:900;font-size:15px;display:grid;place-items:center;flex-shrink:0}
+.doc-name{font-weight:800;font-size:16px}
+.doc-reason{font-size:14.5px;color:var(--muted);margin-top:2px}
+.step-list li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:15px 0;border-bottom:1px dashed var(--line);align-items:start}
+.step-list li:last-child{border-bottom:0}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;font-weight:900;font-size:15px;display:grid;place-items:center;justify-self:start;box-shadow:0 4px 10px rgba(14,122,104,.3)}
+.step-title{font-weight:800;font-size:16px}
+.step-detail{font-size:14.5px;color:var(--muted);margin-top:2px}
+.warn-block{border-color:rgba(179,67,46,.35)}
+.warn-block h3{color:var(--red)}
+.warn-block h3 svg{color:var(--red)}
+.warn-block ul{margin:0;padding:0 0 0 2px;list-style:none}
+.warn-block li{display:flex;gap:10px;font-size:14.5px;color:#7C3A2C;padding:6px 0;align-items:flex-start}
+.warn-block li svg{width:16px;height:16px;flex-shrink:0;margin-top:4px}
+/* ===== 通用區段 ===== */
+section[id]{scroll-margin-top:84px}
+.sec{padding:66px 0}
+.sec-head{max-width:640px;margin-bottom:30px}
+.sec-head h2{font-size:32px;font-weight:900;letter-spacing:-.01em}
+.sec-sub{color:var(--muted);font-size:15.5px;margin-top:10px}
+.sec-alt{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* 範例卡片 */
+.sample-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sample-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.sample-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.sample-card .tag{align-self:flex-start;font-size:12px;font-weight:800;color:var(--teal-deep);background:var(--teal-soft);border-radius:999px;padding:4px 11px;margin-bottom:12px}
+.sample-card h3{font-size:17px;font-weight:900}
+.sample-card p{font-size:13.5px;color:var(--muted);margin:10px 0 16px;line-height:1.75;flex:1;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.load-sample-btn{border:1px solid var(--line);background:var(--bg-soft);color:var(--teal-deep);font-size:13.5px;font-weight:800;padding:10px 14px;border-radius:11px;cursor:pointer;transition:background .15s,border-color .15s}
+.load-sample-btn:hover{background:var(--teal-soft);border-color:var(--teal)}
+/* 情境導覽 */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.guide-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;text-align:left;font-family:inherit}
+.guide-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--teal)}
+.guide-card .g-ico{width:44px;height:44px;border-radius:13px;background:var(--amber-soft);color:var(--amber-deep);display:grid;place-items:center;margin-bottom:14px}
+.guide-card .g-ico svg{width:22px;height:22px}
+.guide-card h3{font-size:17px;font-weight:900}
+.guide-card p{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.75}
+.guide-card .g-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--teal-deep);margin-top:14px}
+.guide-card .g-cta svg{width:14px;height:14px;transition:transform .15s}
+.guide-card:hover .g-cta svg{transform:translateX(3px)}
+/* 詞彙 */
+.glossary-search{width:100%;max-width:480px;border:1px solid var(--line);border-radius:14px;padding:13px 18px;font-family:inherit;font-size:15px;background:#fff;margin-bottom:22px;color:var(--ink)}
+.glossary-search:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.glossary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.glossary-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:15px 17px;box-shadow:0 3px 10px rgba(38,36,31,.04)}
+.glossary-card b{color:var(--teal-deep);font-size:15.5px}
+.glossary-card span{display:block;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.65}
+.glossary-empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px 0;font-size:14.5px}
+/* 常見問題 */
+.faq-list{max-width:760px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden}
+.faq-item summary{display:flex;align-items:center;gap:12px;padding:17px 20px;cursor:pointer;font-weight:800;font-size:15.5px;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .plus{width:24px;height:24px;border-radius:8px;background:var(--teal-soft);color:var(--teal-deep);display:grid;place-items:center;flex-shrink:0;transition:transform .2s}
+.faq-item summary .plus svg{width:14px;height:14px}
+.faq-item[open] summary .plus{transform:rotate(45deg)}
+.faq-body{padding:0 20px 18px 56px;font-size:14.5px;color:var(--muted)}
+.faq-body p{margin-bottom:8px}
+/* 資源 */
+.resource-list{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 14px}
+.resource-list a{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 18px;text-decoration:none;color:var(--teal-deep);font-weight:700;font-size:14px;transition:border-color .15s,box-shadow .15s}
+.resource-list a:hover{border-color:var(--teal);box-shadow:var(--shadow)}
+.resource-list a svg{width:14px;height:14px}
+.hotline{display:inline-flex;align-items:center;gap:9px;background:var(--teal-deep);color:#fff;border-radius:14px;padding:13px 20px;font-weight:700;font-size:15px}
+.hotline svg{width:19px;height:19px;color:var(--amber)}
+/* ===== 頁尾 ===== */
+.site-footer{border-top:1px solid var(--line);background:var(--bg-soft);padding:34px 0 40px;margin-top:30px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start}
+.site-footer .brand-text small{color:var(--muted)}
+.footer-note{max-width:520px;font-size:13px;color:var(--muted);line-height:1.8}
+.footer-links{display:flex;gap:16px;font-size:13.5px}
+.footer-links a{color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--teal-deep)}
+/* ===== Modal ===== */
+.modal-overlay{position:fixed;inset:0;background:rgba(30,28,24,.5);backdrop-filter:blur(4px);z-index:90;display:grid;place-items:center;padding:20px}
+.modal-overlay[hidden]{display:none}
+.modal{background:var(--card);border-radius:22px;box-shadow:var(--shadow-lg);width:100%;max-width:520px;max-height:86vh;overflow:auto;padding:26px 28px;animation:pop .2s ease}
+@keyframes pop{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.modal-head h3{font-size:20px;font-weight:900}
+.modal-close{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.modal-close:hover{color:var(--red);border-color:var(--red)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.field select,.field input{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-family:inherit;font-size:14.5px;background:#fff;color:var(--ink)}
+.field select:focus,.field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-soft)}
+.field .hint{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.7}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:20px;flex-wrap:wrap}
+.btn-primary{border:0;background:var(--teal);color:#fff;font-weight:800;font-size:15px;padding:11px 22px;border-radius:12px;cursor:pointer;transition:filter .15s}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:12px;cursor:pointer}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-deep)}
+.history-item{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 15px;margin-bottom:10px;background:var(--bg-soft)}
+.history-item .h-info{flex:1;min-width:0}
+.history-item .h-title{font-weight:800;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.history-item .h-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.history-item button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 11px;font-size:12.5px;font-weight:700;cursor:pointer;color:var(--ink);flex-shrink:0}
+.history-item .h-view:hover{border-color:var(--teal);color:var(--teal-deep)}
+.history-item .h-del:hover{border-color:var(--red);color:var(--red)}
+.history-empty{text-align:center;color:var(--muted);padding:30px 0;font-size:14.5px}
+/* ===== Toast ===== */
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:14px;font-weight:700;padding:13px 22px;border-radius:14px;box-shadow:var(--shadow-lg);z-index:120;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:88vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.err{background:var(--red)}
+/* ===== 響應式 ===== */
+@media (max-width:1024px){
+  .sample-cards{grid-template-columns:repeat(2,1fr)}
+  .guide-grid{grid-template-columns:repeat(2,1fr)}
+  .keyinfo-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:880px){
+  .nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:42px}
+  .hero-motif{max-width:420px;margin:0 auto}
+  .tool-panel{padding:26px 22px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 18px}
+  .hero{padding:48px 0 28px}
+  .hero h1{font-size:34px}
+  .hero-sub{font-size:16px}
+  .stat{padding:11px 16px}
+  .stat b{font-size:20px}
+  .sample-cards,.guide-grid,.keyinfo-grid,.glossary-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .sec{padding:48px 0}
+  .sec-head h2{font-size:26px}
+  .result-block{padding:20px 18px}
+  .faq-body{padding-left:20px}
+  .footer-inner{flex-direction:column}
+}
+
+/* 公文搜尋 */
+.search-panel{background:#fff;border-radius:16px;padding:28px;box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.search-input-row{display:flex;gap:10px;margin-bottom:14px}
+.search-input-row input{flex:1;padding:13px 16px;border:2px solid var(--line);border-radius:10px;font-size:16px;font-family:inherit}
+.search-input-row input:focus{border-color:var(--accent);outline:none}
+.search-input-row .btn-primary{padding:13px 28px;font-size:16px;white-space:nowrap}
+.search-cats{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.cat-chip{padding:6px 16px;border-radius:20px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:14px;font-family:inherit;color:var(--ink);transition:all .15s}
+.cat-chip:hover{border-color:var(--accent)}
+.cat-chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.search-results{border-top:1px solid var(--line);padding-top:18px;margin-top:8px}
+.search-loading{padding:16px;color:var(--ink2);font-size:15px}
+.search-answer{background:#f0f7f4;border-left:4px solid var(--accent);padding:18px 22px;border-radius:0 10px 10px 0;margin-bottom:18px;line-height:1.9;white-space:pre-wrap;font-size:15px}
+.search-portals h4{margin:0 0 12px;font-size:15px;color:var(--ink2);font-weight:600}
+.portal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.portal-card{display:block;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);transition:border-color .15s,background .15s}
+.portal-card:hover{border-color:var(--accent);background:var(--teal-soft)}
+.portal-card b{display:block;font-size:14px;margin-bottom:3px}
+.portal-card span{font-size:12px;color:var(--ink2)}
+.search-sources h4{margin:18px 0 10px;font-size:15px;color:var(--ink2);font-weight:600}
+.source-item{padding:12px 0;border-bottom:1px solid var(--line)}
+.source-item:last-child{border-bottom:none}
+.source-item a{color:var(--accent);text-decoration:none;font-weight:600;font-size:14px}
+.source-item a:hover{text-decoration:underline}
+.source-item p{margin:5px 0 0;font-size:13px;color:var(--ink2);line-height:1.6}
+@media(max-width:600px){.search-input-row{flex-direction:column}.search-input-row .btn-primary{width:100%}}
+
+/* 詞彙小幫手升級 */
+.glossary-search-row{display:flex;gap:10px;margin-bottom:18px;max-width:620px}
+.glossary-search-row .glossary-search{margin-bottom:0;flex:1}
+.glossary-ai-btn{padding:13px 22px;font-size:15px;white-space:nowrap}
+.glossary-ai-result{background:var(--card);border:2px solid var(--teal);border-radius:14px;padding:20px 22px;margin-bottom:22px;box-shadow:0 4px 14px rgba(38,36,31,.06)}
+.gai-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.gai-term{font-size:20px;color:var(--teal-deep)}
+.gai-badge{font-size:11px;background:var(--teal);color:#fff;padding:3px 10px;border-radius:10px;font-weight:500}
+.gai-plain{font-size:15.5px;line-height:1.8;margin-bottom:8px}
+.gai-example{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:12px;padding-left:12px;border-left:3px solid var(--teal-soft)}
+.gai-translations{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px 14px}
+.gai-lang{font-size:13.5px;line-height:1.5}
+.gai-lang b{color:var(--teal-deep);margin-right:6px;font-weight:600}
+.g-loading{color:var(--muted);font-size:13px;padding:8px 0}
+.glossary-card{position:relative}
+.g-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.g-translate-btn{font-size:12px;padding:3px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;color:var(--teal-deep);font-family:inherit;transition:all .15s}
+.g-translate-btn:hover{background:var(--teal-soft);border-color:var(--teal)}
+.g-translate-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.g-translations{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.g-translations .gai-lang{font-size:12.5px}
+@media(max-width:600px){.glossary-search-row{flex-direction:column}.glossary-ai-btn{width:100%}.g-translations{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#tool">跳到翻譯工具</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="公文白話通 首頁">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+      </span>
+      <span class="brand-text">公文白話通<small>看得懂，才辦得成</small></span>
+    </a>
+    <nav class="nav" aria-label="主要導覽">
+      <a href="#tool">翻譯工具</a>
+      <a href="#search">公文搜尋</a>
+      <a href="#samples">範例公文</a>
+      <a href="#guide">情境導覽</a>
+      <a href="#glossary">詞彙小幫手</a>
+      <a href="#faq">常見問題</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="historyBtn" aria-label="歷史紀錄" title="歷史紀錄">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 3"/></svg>
+      </button>
+      <button class="icon-btn" id="settingsBtn" aria-label="後端設定" title="後端設定">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1.1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1.1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.01a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.01a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h6"/><circle cx="18.5" cy="16.5" r="3"/><path d="M18.5 14.5v4M16.5 16.5h4"/></svg>
+          給新住民・跨國青年・新住民子女的小工具
+        </span>
+        <h1>政府公文，<em>一貼就懂</em></h1>
+        <p class="hero-sub">收到看不懂的公文或法規？貼上來，一次翻譯成<b>繁體白話、簡體中文</b>，以及<b>馬來語、印尼語、越南語、泰語、菲律賓語、緬甸語、高棉語、寮語</b>共 10 種語言，還會自動幫你整理：<b>要準備哪些文件</b>、<b>下一步去哪裡辦</b>。</p>
+        <div class="hero-stats">
+          <div class="stat"><b>10 種語言</b><span>繁中白話＋9 種中文／東南亞語言</span></div>
+          <div class="stat"><b>自動分類</b><span>居留・健保・補助・工作</span></div>
+          <div class="stat"><b>免金鑰即時翻譯</b><span>預設開啟，貼上就能翻成東南亞語言</span></div>
+        </div>
+      </div>
+      <div class="hero-motif" aria-hidden="true">
+        <div class="motif-ring"></div>
+        <div class="motif-card">
+          <div class="motif-doc">
+            <div class="mline" style="width:100%"></div>
+            <div class="mline" style="width:88%"></div>
+            <div class="mline" style="width:72%"></div>
+          </div>
+          <div class="motif-arrow">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </div>
+          <div class="motif-langs">
+            <div class="mlang tw"><b>白話</b>看得懂</div>
+            <div class="mlang ms"><b>Bahasa</b>faham</div>
+            <div class="mlang cn"><b>Tiếng Việt</b>hiểu rõ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 翻譯工具 ===== -->
+  <section class="tool-section" id="tool">
+    <div class="wrap">
+      <div class="tool-panel">
+        <div class="tool-head">
+          <div>
+            <h2>貼上公文，馬上翻譯</h2>
+            <p>支援法規條文、政府通知、補助公告…只要是中文公文都可以。</p>
+          </div>
+          <span class="mode-pill" id="modePill"><span class="dot"></span><span id="modePillText">免費即時翻譯</span></span>
+        </div>
+        <div class="lang-picker-wrap">
+          <div class="quick-row">
+            <span class="lang-count" id="langCount">已選 2／6 種</span>
+            <button type="button" class="quick-btn" id="quickCommonBtn">常用 6 種（繁中＋馬／印／越／泰／菲）</button>
+            <button type="button" class="quick-btn" id="quickClearBtn">全清</button>
+          </div>
+          <div class="lang-picker" id="langPicker" role="group" aria-label="選擇翻譯語言（可多選）"></div>
+          <p class="lang-note">可多選，一次最多 6 種；選越多等待越久，建議一次 2–4 種。</p>
+        </div>
+        <label class="visually-hidden" for="docInput">貼上公文內容</label>
+        <textarea id="docInput" placeholder="把公文或法規文字貼在這裡…&#10;例如：外僑居留證申請、健保加保、補助公告的通知信" maxlength="30000" spellcheck="false"></textarea>
+        <div class="tool-meta">
+          <span class="detect-chip" id="detectChip">文件類型：<b>尚未偵測</b></span>
+          <span class="char-count" id="charCount">0 字</span>
+        </div>
+        <div class="sample-row">
+          <span class="sample-label">沒帶公文？先試試範例：</span>
+          <button type="button" class="sample-btn" data-sample="stay">居留證延期</button>
+          <button type="button" class="sample-btn" data-sample="nhid">健保加保</button>
+          <button type="button" class="sample-btn" data-sample="fund">新住民補助</button>
+          <button type="button" class="sample-btn" data-sample="work">工作許可</button>
+        </div>
+        <button type="button" class="run-btn" id="runBtn">翻譯並整理</button>
+        <div class="loading" id="loading" hidden>
+          <div class="loading-track"><div class="loading-bar" id="loadingBar"></div></div>
+          <div id="loadingSteps"></div>
+        </div>
+      </div>
+
+      <!-- 結果區 -->
+      <div class="result-wrap" id="resultWrap" hidden>
+        <div class="result-head">
+          <div class="result-tags">
+            <span id="resultType">文件類型</span>
+            <span class="lang" id="resultLang">—</span>
+            <span class="saved-note" id="savedNote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              已自動存入歷史紀錄
+            </span>
+          </div>
+          <div class="result-actions">
+            <button type="button" id="copyBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              複製結果
+            </button>
+            <button type="button" id="downloadBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+              下載 .md
+            </button>
+          </div>
+        </div>
+        <div class="demo-note" id="demoNote" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          <span id="demoNoteText"></span>
+        </div>
+        <div class="demo-note free-note" id="freeNote" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6"/><circle cx="12" cy="12" r="3.5"/></svg>
+          <span id="freeNoteText"></span>
+        </div>
+        <div class="tab-bar" id="resultTabs" role="tablist"></div>
+        <div id="langPanels"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== 公文搜尋 ===== -->
+  <section class="sec" id="search">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>找最新公文</h2>
+        <p>輸入關鍵字，搜尋政府最新法規與公告。有接 Vercel 後端時，AI 會自動聯網整理答案與出處；沒接後端也能直接連到官方搜尋入口。</p>
+      </div>
+      <div class="search-panel">
+        <div class="search-input-row">
+          <input type="text" id="searchInput" placeholder="例如：居留證延期、健保加保、租金補貼、新住民獎學金…" autocomplete="off">
+          <button type="button" id="searchBtn" class="btn-primary">搜尋</button>
+        </div>
+        <div class="search-cats" id="searchCats" role="group" aria-label="搜尋分類">
+          <button class="cat-chip active" data-cat="all">全部</button>
+          <button class="cat-chip" data-cat="law">法規</button>
+          <button class="cat-chip" data-cat="gazette">公文公告</button>
+          <button class="cat-chip" data-cat="immigration">移民</button>
+          <button class="cat-chip" data-cat="health">健保</button>
+          <button class="cat-chip" data-cat="labor">勞動</button>
+          <button class="cat-chip" data-cat="education">教育</button>
+          <button class="cat-chip" data-cat="interior">內政</button>
+        </div>
+        <div id="searchResults" class="search-results" hidden>
+          <div class="search-loading" id="searchLoading" hidden>AI 聯網搜尋中，請稍候…</div>
+          <div class="search-answer" id="searchAnswer" hidden></div>
+          <div class="search-portals" id="searchPortals"></div>
+          <div class="search-sources" id="searchSources" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 範例公文 ===== -->
+  <section class="sec sec-alt" id="samples">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常見的政府公文，長什麼樣？</h2>
+        <p class="sec-sub">這些是簡化示範範例（節錄），點「載入試試」就會帶進翻譯工具。真實公文請以政府機關公告為準。</p>
+      </div>
+      <div class="sample-cards" id="sampleCards"></div>
+    </div>
+  </section>
+
+  <!-- ===== 情境導覽 ===== -->
+  <section class="sec" id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>你現在遇到哪一種情況？</h2>
+        <p class="sec-sub">選一個情境，會自動載入對應的範例公文，看看翻譯助手怎麼幫你整理。</p>
+      </div>
+      <div class="guide-grid" id="guideGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 詞彙小幫手 ===== -->
+  <section class="sec sec-alt" id="glossary">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>詞彙小幫手</h2>
+        <p class="sec-sub">公文裡常出現的難懂詞，這裡翻成白話＋9 國語言。內建沒有？輸入後按「AI 查詞」立即解釋。</p>
+      </div>
+      <div class="glossary-search-row">
+        <input type="search" class="glossary-search" id="glossarySearch" placeholder="搜尋詞彙，例如：檢附、核發、展延…" aria-label="搜尋詞彙">
+        <button type="button" class="btn-primary glossary-ai-btn" id="glossaryAiBtn">AI 查詞</button>
+      </div>
+      <div id="glossaryAiResult" class="glossary-ai-result" hidden></div>
+      <div class="glossary-grid" id="glossaryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== 常見問題 ===== -->
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>常見問題</h2>
+        <p class="sec-sub">關於這個工具與「免費後端」，你可能會想知道的幾件事。</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>我的公文內容安全嗎？</summary>
+          <div class="faq-body"><p>預設「免費即時翻譯」模式會把公文直接送到 Google 翻譯（不經過你自己架的任何伺服器）；「Vercel 免費後端」模式則送到你自己的後端、再轉送給 AI 服務，API 金鑰只存在 Vercel 環境變數，前端網頁和使用者都看不到。「體驗模式」完全不連網，只在瀏覽器內示範。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>需要付費嗎？</summary>
+          <div class="faq-body"><p>網頁與後端都使用免費方案（Vercel Hobby）。翻譯時用到你自己設定的 AI 服務額度，多數服務（如 DeepSeek）都有免費試用額度，一次翻譯成本很低。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>「後端」是什麼？一定要架嗎？</summary>
+          <div class="faq-body"><p>不用架！預設「免費即時翻譯」免金鑰、免部署，貼上就能翻成你選的語言。架 Vercel 免費後端（照 README 約 10 分鐘）是用 AI 做更準確的白話整理與重點摘要，品質更好，屬於升級選項。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>支援哪些語言？</summary>
+          <div class="faq-body"><p>繁體中文白話文、簡體中文，以及 8 種東南亞語言：馬來語（馬來西亞標準）、印尼語、越南語、泰語、菲律賓語（他加祿語）、緬甸語、高棉語（柬埔寨）、寮語。可多選，一次最多 6 種，每種語言都會得到完整的翻譯＋文件清單＋步驟＋關鍵資訊。</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>翻譯結果一定正確嗎？</summary>
+          <div class="faq-body"><p>AI 翻譯只做「輔助理解」，不保證 100% 正確。涉及簽名、繳費、期限等重大事項，請以政府機關的正式公告為準，不確定的地方可以打 1990 專線（提供多國語言）確認。</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 官方資源 ===== -->
+  <section class="sec sec-alt" id="resources">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>官方的求助管道</h2>
+        <p class="sec-sub">遇到問題，也可以直接找這些官方單位（都會開新分頁）。</p>
+      </div>
+      <div class="resource-list">
+        <a href="https://www.immigration.gov.tw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>內政部移民署</a>
+        <a href="https://ifi.immigration.gov.tw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>新住民培力發展資訊網</a>
+        <a href="https://www.nhi.gov.tw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>中央健康保險署</a>
+        <a href="https://www.wda.gov.tw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>勞動部勞動力發展署</a>
+        <a href="https://www.edu.tw" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>教育部</a>
+      </div>
+      <p class="hotline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+        外來人士在臺生活諮詢專線 1990（免費，提供多國語言）
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+        </span>
+        <span class="brand-text">公文白話通<small>看得懂，才辦得成</small></span>
+      </div>
+      <p class="footer-note">本工具僅供輔助理解，不構成法律意見。實際規定請以政府機關正式公告為準。範例公文為簡化節錄，僅供試用。做給每一位在台灣努力生活的你。</p>
+    </div>
+    <div class="footer-links">
+      <a href="#tool">翻譯工具</a>
+      <a href="#search">公文搜尋</a>
+      <a href="#samples">範例公文</a>
+      <a href="#guide">情境導覽</a>
+      <a href="#glossary">詞彙小幫手</a>
+      <a href="#faq">常見問題</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 後端設定 Modal ===== -->
+<div class="modal-overlay" id="settingsModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-head">
+      <h3 id="settingsTitle">後端設定</h3>
+      <button type="button" class="modal-close" data-close="settingsModal" aria-label="關閉">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="field">
+      <label for="modeSel">翻譯模式</label>
+      <select id="modeSel">
+        <option value="free">免費即時翻譯（預設：免金鑰、免部署，貼上就能翻）</option>
+        <option value="vercel">Vercel 免費後端（高品質：金鑰藏在伺服器，需先部署）</option>
+        <option value="demo">體驗模式（離線示範，斷網也能看）</option>
+      </select>
+      <p class="hint">預設「免費即時翻譯」立刻可用，會把公文翻成你選的每一種語言；要更準確的白話整理再架 Vercel 後端（照 README 約 10 分鐘）。</p>
+    </div>
+    <div class="field" id="urlField">
+      <label for="vercelUrl">你的後端網址（僅 Vercel 模式需要）</label>
+      <input type="text" id="vercelUrl" placeholder="https://你的專案名稱.vercel.app" autocomplete="off">
+      <p class="hint">部署後把網址貼進來（例如 https://gongwen-baihua-tong.vercel.app）。部署步驟見資料夾內的 README.md。不需要填 API 金鑰——金鑰在 Vercel 伺服器的環境變數裡，前端與使用者都看不到。</p>
+    </div>
+    <div class="modal-foot">
+      <button type="button" class="btn-ghost" id="testBtn">測試連線</button>
+      <button type="button" class="btn-ghost" data-close="settingsModal">取消</button>
+      <button type="button" class="btn-primary" id="saveSettingsBtn">儲存設定</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 歷史紀錄 Modal ===== -->
+<div class="modal-overlay" id="historyModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+    <div class="modal-head">
+      <h3 id="historyTitle">歷史紀錄</h3>
+      <button type="button" class="modal-close" data-close="historyModal" aria-label="關閉">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="historyList"></div>
+    <div class="modal-foot">
+      <button type="button" class="btn-ghost" id="clearHistoryBtn">清空全部</button>
+      <button type="button" class="btn-primary" data-close="historyModal">關閉</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+'use strict';
+/* ===== 工具函式 ===== */
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+function esc(s){return String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+let toastTimer;
+function toast(msg, isErr=false){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.toggle('err', isErr);
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 3200);
+}
+function openModal(id){ $('#'+id).hidden = false; document.body.style.overflow='hidden'; }
+function closeModal(id){ $('#'+id).hidden = true; document.body.style.overflow=''; }
+function formatTime(ts){ const d = new Date(ts); const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}/${p(d.getMonth()+1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+
+/* ===== 語言資料（10 種） ===== */
+const LANGS = {
+  'zh-TW': {short:'繁體白話', full:'繁體中文白話文（台灣）'},
+  'zh-CN': {short:'簡體中文', full:'簡體中文（大陸）'},
+  'ms-MY': {short:'馬來語', full:'馬來語（馬來西亞）'},
+  'id-ID': {short:'印尼語', full:'印尼語'},
+  'vi-VN': {short:'越南語', full:'越南語'},
+  'th-TH': {short:'泰語', full:'泰語'},
+  'tl-PH': {short:'菲律賓語', full:'菲律賓語（他加祿語）'},
+  'my-MM': {short:'緬甸語', full:'緬甸語'},
+  'km-KH': {short:'高棉語', full:'高棉語（柬埔寨）'},
+  'lo-LA': {short:'寮語', full:'寮語'}
+};
+const LANGS_ORDER = Object.keys(LANGS);
+const MAX_LANGS = 6;
+const QUICK_COMMON = ['zh-TW','ms-MY','id-ID','vi-VN','th-TH','tl-PH'];
+
+/* 關鍵資訊卡片的語言化標籤 */
+const KI_LABELS = {
+  'zh-TW':{deadline:'辦理期限',agency:'負責單位',fee:'費用',contact:'聯絡方式'},
+  'zh-CN':{deadline:'办理期限',agency:'负责单位',fee:'费用',contact:'联系方式'},
+  'ms-MY':{deadline:'Tarikh akhir',agency:'Agensi berkaitan',fee:'Yuran',contact:'Hubungi'},
+  'id-ID':{deadline:'Batas waktu',agency:'Instansi terkait',fee:'Biaya',contact:'Kontak'},
+  'vi-VN':{deadline:'Hạn chót',agency:'Cơ quan phụ trách',fee:'Chi phí',contact:'Liên hệ'},
+  'th-TH':{deadline:'กำหนดเวลา',agency:'หน่วยงานที่รับผิดชอบ',fee:'ค่าธรรมเนียม',contact:'ติดต่อ'},
+  'tl-PH':{deadline:'Takdang oras',agency:'Ahensya',fee:'Bayad',contact:'Kontakin'},
+  'my-MM':{deadline:'နောက်ဆုံးရက်',agency:'တာဝန်ရှိဌာန',fee:'အခကြေးငွေ',contact:'ဆက်သွယ်ရန်'},
+  'km-KH':{deadline:'ថ្ងៃកំណត់',agency:'ស្ថាប័នទទួលបន្ទុក',fee:'ថ្លៃ',contact:'ទំនាក់ទំនង'},
+  'lo-LA':{deadline:'ກຳນົດເວລາ',agency:'ຫົວໜ່ວຍທີ່ຮັບຜິດຊອບ',fee:'ຄ່າທຳນຽມ',contact:'ຕິດຕໍ່'}
+};
+/* 區塊標題的語言化標籤 */
+const SEC_LABELS = {
+  'zh-TW':{translation:'白話翻譯',documents:'你需要準備的文件',steps:'下一步該怎麼做',warnings:'注意事項'},
+  'zh-CN':{translation:'白话翻译',documents:'你需要准备的文件',steps:'下一步该怎么做',warnings:'注意事项'},
+  'ms-MY':{translation:'Terjemahan ringkas',documents:'Dokumen yang perlu disediakan',steps:'Langkah seterusnya',warnings:'Perhatian'},
+  'id-ID':{translation:'Terjemahan sederhana',documents:'Dokumen yang perlu disiapkan',steps:'Langkah selanjutnya',warnings:'Perhatian'},
+  'vi-VN':{translation:'Bản dịch dễ hiểu',documents:'Giấy tờ cần chuẩn bị',steps:'Các bước tiếp theo',warnings:'Lưu ý'},
+  'th-TH':{translation:'คำแปลภาษาง่าย',documents:'เอกสารที่ต้องเตรียม',steps:'ขั้นตอนต่อไป',warnings:'ข้อควรระวัง'},
+  'tl-PH':{translation:'Salin sa malinaw na salita',documents:'Mga dokumentong kailangang ihanda',steps:'Mga susunod na hakbang',warnings:'Mga paalala'},
+  'my-MM':{translation:'ရိုးရှင်းဘာသာပြန်',documents:'ပြင်ဆင်ရမည့်စာရွက်စာတမ်းများ',steps:'နောက်ထပ်လုပ်ရမည့်အဆင့်များ',warnings:'သတိပြုရန်'},
+  'km-KH':{translation:'ការបកប្រែជាភាសាងាយ',documents:'ឯកសារដែលត្រូវរៀបចំ',steps:'ជំហានបន្ទាប់',warnings:'ការប្រុងប្រយ័ត្ន'},
+  'lo-LA':{translation:'ການແປພາສາງ່າຍໆ',documents:'ເອກະສານທີ່ຕ້ອງກຽມ',steps:'ຂັ້ນຕອນຕໍ່ໄປ',warnings:'ຂໍ້ຄວນລະວັງ'}
+};
+
+/* ===== 設定與狀態 ===== */
+const DEFAULT_SETTINGS = {mode:(location.hostname.endsWith('github.io') ? 'vercel' : 'free'), vercelUrl:''};
+/* API 位址自動偵測：手動填寫優先；Vercel/本機預覽走同源；GitHub Pages 或本機檔案自動改用線上 Vercel 後端 */
+function apiBase(){
+  const manual = ((APP && APP.settings && APP.settings.vercelUrl) || '').trim().replace(/\/+$/,'');
+  if(manual) return manual;
+  const h = location.hostname;
+  if(h.endsWith('vercel.app') || h === 'localhost' || h === '127.0.0.1') return '';
+  return 'https://gongwen-baihua-tong.vercel.app';
+}
+function loadSettings(){
+  try{
+    const s = JSON.parse(localStorage.getItem('bt_settings')||'{}');
+    if(s && (s.mode==='demo' || s.mode==='free' || s.mode==='vercel')) return Object.assign({}, DEFAULT_SETTINGS, s);
+  }catch(_){}
+  return Object.assign({}, DEFAULT_SETTINGS);
+}
+function loadHistory(){
+  try{ return JSON.parse(localStorage.getItem('bt_history')||'[]'); }
+  catch(_){ return []; }
+}
+const APP = {
+  settings: loadSettings(),
+  selectedLangs: ['zh-TW','ms-MY'],
+  history: loadHistory(),
+  lastResult: null
+};
+function updateModePill(){
+  const pill = $('#modePill'), txt = $('#modePillText');
+  const s = APP.settings;
+  pill.classList.remove('online');
+  if(s.mode === 'vercel' && s.vercelUrl){
+    pill.classList.add('online');
+    let host = '已連接後端';
+    try{ host = '後端：' + new URL(s.vercelUrl).host; }catch(_){ host = '已連接後端'; }
+    txt.textContent = host;
+  }else if(s.mode === 'vercel'){
+    pill.classList.add('online');
+    txt.textContent = '後端：自動偵測';
+  }else if(s.mode === 'demo'){
+    txt.textContent = '體驗模式（離線示範）';
+  }else{
+    txt.textContent = '免費即時翻譯';
+  }
+}
+
+/* ===== 資料：範例公文 ===== */
+const SAMPLES = {
+  stay:{type:'居留／簽證', title:'居留證延期申請', text:'外國人停留居留及永久居留辦法（範例節錄）\n第32條　外國人申請外僑居留證延期，應於居留期限屆滿前三個月內，檢附下列文件向內政部移民署提出申請：\n一、申請書。\n二、護照正本及影本。\n三、居留證。\n四、其他主管機關規定之證明文件（如在學證明、在職證明）。\n未於期限內申請延期者，逾期居留期間將依規定處理，並可能影響後續居留權益。\n居留證遺失或毀損者，應於事實發生後十五日內申請補發。\n（備註：「停留延期」為期限屆滿前十五日內，與「居留延期」不同。）'},
+  nhid:{type:'健保／醫療', title:'健保加保規定', text:'全民健康保險法（範例節錄）\n外國人取得居留證明文件，在臺居留滿六個月者，應自滿六個月之次日起參加全民健康保險。\n受僱者應由投保單位（雇主）辦理投保；無投保單位者，得向鄉（鎮、市、區）公所申請以適當身分投保。\n眷屬應依附被保險人辦理投保，其保險費由被保險人一併繳納。\n未依規定投保或繳納保險費者，可能影響就醫權益。'},
+  work:{type:'工作許可', title:'外國人工作許可申請', text:'雇主聘僱外國人許可及管理辦法（範例節錄）\n雇主申請聘僱外國人從事工作，應檢附下列文件向勞動部申請許可：\n一、聘僱許可申請書。\n二、雇主身分證明文件。\n三、外國人護照影本。\n四、勞動契約或聘僱契約。\n聘僱許可期間屆滿前，雇主得申請展延，每次展延期間最長為三年。\n外國人僅得於許可有效期間內，受聘僱從事許可範圍內之工作。'},
+  fund:{type:'補助／福利', title:'新住民發展基金補助', text:'新住民發展基金補助作業要點（範例節錄）\n申請人資格：與國人結婚之新住民，或新住民之子女，並在臺設有戶籍或領有居留證者。\n補助範圍：生活適應、醫療保健、就業輔導、教育文化、法律服務等項目。\n申請方式：檢附申請書、身分證明文件及相關佐證資料，向所在地之直轄市、縣（市）政府提出申請。\n審查通過後，以書面通知核定金額及撥款方式。'},
+  school:{type:'就學／教育', title:'新住民子女就學補助', text:'教育部補助新住民子女就學相關措施（範例節錄）\n申請對象：新住民子女就讀國內高級中等學校（含五專前三年）者。\n補助項目：依當年度公告，提供就學費用補助或獎助學金。\n申請方式：於學校公告之期限內，檢附申請表、戶口名簿影本及相關證明文件，向就讀學校提出申請。\n是否通過與補助金額，以學校及主管機關核定為準。'},
+  rent:{type:'租屋補貼', title:'租金補貼申請', text:'300億元中央擴大租金補貼專案計畫（範例節錄）\n申請資格：家庭成員均無自有住宅，且家庭成員平均每人每月所得低於規定標準；申請人須為中華民國國民，或與國民結婚且領有居留證之新住民。\n補助金額：依所在地縣市與家庭類型分級，每月補貼新臺幣2,000元至8,000元。\n申請方式：以線上申請為主，或備齊文件向所在地之地方政府提出。\n實際申請期間與金額，以內政部當年度公告為準。'}
+};
+
+/* ===== 資料：情境導覽 ===== */
+const GUIDE_ICONS = {
+  stay:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>',
+  work:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+  nhid:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.2 5.4 5.4 0 0 1 21.3 12C19 16.4 12 21 12 21z"/><path d="M12 8.5v7M8.5 12h7"/></svg>',
+  school:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 10v5"/></svg>',
+  fund:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V5a2 2 0 0 1 2-2h2"/><path d="M12 14h.01M16 14h.01M8 14h.01M12 18h.01M16 18h.01M8 18h.01"/></svg>',
+  rent:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg>'
+};
+const GUIDE = [
+  {sample:'stay',  ico:'stay',  title:'剛到台灣，要辦居留證', desc:'怎麼申請、什麼時候要延期、證件掉了怎麼辦。'},
+  {sample:'work',  ico:'work',  title:'想在台灣工作', desc:'工作許可是什麼？雇主怎麼幫你申請？'},
+  {sample:'nhid',  ico:'nhid',  title:'健保怎麼保', desc:'住滿六個月要加保，受僱或沒工作各有不同方式。'},
+  {sample:'school',ico:'school',title:'小孩要入學／就學補助', desc:'新住民子女就學有什麼補助可以申請。'},
+  {sample:'fund',  ico:'fund',  title:'想申請政府補助', desc:'新住民發展基金補助哪些項目、怎麼申請。'},
+  {sample:'rent',  ico:'rent',  title:'租屋想申請補貼', desc:'租金補貼的資格、金額和申請方式。'}
+];
+
+/* ===== 資料：詞彙小幫手 ===== */
+const GLOSSARY = [
+  {term:'檢附', plain:'附上、一起交出去'},
+  {term:'核發', plain:'發給你（證件或文件）'},
+  {term:'主管機關', plain:'負責管這件事的政府單位'},
+  {term:'受理', plain:'收下你的申請，開始處理'},
+  {term:'核准', plain:'同意'},
+  {term:'駁回', plain:'拒絕、不通過'},
+  {term:'補正', plain:'文件不齊，要再補齊'},
+  {term:'逾期', plain:'超過時間、太晚了'},
+  {term:'屆滿', plain:'時間到了'},
+  {term:'展延', plain:'把期限延長'},
+  {term:'具結', plain:'簽名保證'},
+  {term:'逕', plain:'直接'},
+  {term:'有效期間', plain:'證件可以使用的時間'},
+  {term:'居留證', plain:'外國人在台灣居住的證件'},
+  {term:'工作許可', plain:'可以合法工作的證明'},
+  {term:'全民健康保險', plain:'健保，看病可以省錢的保險'},
+  {term:'眷屬', plain:'家人（配偶、小孩、父母）'},
+  {term:'戶籍', plain:'戶口'},
+  {term:'核定', plain:'確認、決定（金額或資格）'},
+  {term:'撥款', plain:'把錢匯給你'}
+];
+
+/* ===== 資料：文件類型偵測 ===== */
+const DOC_RULES = [
+  {id:'stay',   label:'居留／簽證', keys:['居留','簽證','停留','永久居留','外僑','移民署','停留期限','居留期限','入出國']},
+  {id:'work',   label:'工作許可',   keys:['聘僱','工作許可','雇主','勞動契約','外國專業人才','就業服務','勞工']},
+  {id:'nhid',   label:'健保／醫療', keys:['健保','全民健康保險','保險費','加保','投保','醫療']},
+  {id:'fund',   label:'補助／福利', keys:['補助','津貼','基金','福利','獎助學金']},
+  {id:'school', label:'就學／教育', keys:['就學','入學','學校','教育','學籍','註冊','學生']},
+  {id:'rent',   label:'租屋補貼',   keys:['租屋','租金','住宅','房屋']}
+];
+function detectType(text){
+  let best = null, bestScore = 0;
+  for(const r of DOC_RULES){
+    let s = 0;
+    for(const k of r.keys){ if(text.includes(k)) s++; }
+    if(s > bestScore){ bestScore = s; best = r; }
+  }
+  return best ? {id:best.id, label:best.label} : {id:'other', label:'其他文件'};
+}
+
+/* ===== 資料：體驗模式範本 ===== */
+const DEMO_TPL = {
+  stay:{
+    summary:'這份文件在說明「居留證延期」怎麼申請：依 113 年新制，應於居留期限屆滿前 3 個月內，帶著申請書、護照（效期需 6 個月以上）和相關證明，到內政部移民署辦理。逾期沒有辦，會影響你留在台灣的資格；證件遺失或毀損，要在 15 日內申請補發。注意：「停留延期」是期限屆滿前 15 日內，和「居留延期」不同，別搞混。',
+    keyInfo:{deadline:'居留期限屆滿前 3 個月內（113年新制）', agency:'內政部移民署服務站', fee:'規費以官方公告為準', contact:'移民署 1990 專線'},
+    documents:[
+      {name:'外僑居留證申請書', reason:'填寫基本資料，可現場索取或線上取得'},
+      {name:'護照正本（效期6個月以上）與影本', reason:'證明你的身分與停留期限'},
+      {name:'現有居留證', reason:'辦理延期需要附上'},
+      {name:'在學或工作證明', reason:'證明你繼續待在台灣的原因'}
+    ],
+    steps:[
+      {title:'先確認是「居留」還是「停留」', detail:'居留延期是期限屆滿前3個月內；停留延期是15日內，規定不同'},
+      {title:'備齊文件', detail:'依上方清單準備，護照效期需6個月以上，缺件會被要求補正'},
+      {title:'繳交文件與規費', detail:'到移民署服務站現場辦理，或上移民署網站線上申請'},
+      {title:'等待審查', detail:'一般約 5–10 個工作天，可上網查進度'},
+      {title:'領證並檢查', detail:'拿到新證後，立刻確認上面的到期日是否正確'}
+    ],
+    warnings:['居留延期是期限屆滿前 3 個月內（113年新制，不是30天）','停留延期是期限屆滿前 15 日內，和居留延期不同','居留證遺失或毀損，要在 15 日內申請補發']
+  },
+  nhid:{
+    summary:'這份文件在說明健保加保的規定：有工作的外國人（受僱者）自受僱當天起就要加保，不用等 6 個月；沒有工作的人，要在台灣住滿 6 個月（連續居住，或曾出境 1 次未逾 30 日、扣除出境日數後併計達 6 個月）後的次日起加保。有雇主由雇主辦；沒有雇主到戶籍地鄉鎮市區公所辦第六類投保。家人可依附投保。',
+    keyInfo:{deadline:'受僱者自受僱日起；非受僱者居留滿6個月次日起', agency:'健保署／鄉（鎮、市、區）公所', fee:'每月健保費依身分類別而定', contact:'健保署 0800-030-598'},
+    documents:[
+      {name:'居留證影本', reason:'證明你的加保資格'},
+      {name:'戶口名簿或親屬關係證明', reason:'眷屬要依附你投保時需要'},
+      {name:'投保單位資料', reason:'雇主名稱，或到公所辦理時的身分資料'}
+    ],
+    steps:[
+      {title:'確認加保身分', detail:'有工作→雇主自受僱日幫你投保（免等6個月）；沒工作→居留滿6個月後到公所辦'},
+      {title:'辦理投保', detail:'雇主會幫你辦；自己辦則帶證件到戶籍地公所或健保署'},
+      {title:'繳納保險費', detail:'按月繳費，可申請自動扣繳'},
+      {title:'開始使用健保', detail:'拿到健保卡後，看病就可以用'}
+    ],
+    warnings:['受僱者不用等 6 個月，當天就要加保','非受僱者住滿 6 個月（出境30日內可併計），次日起加保','健保費記得按時繳，欠費可能被鎖卡']
+  },
+  work:{
+    summary:'這份文件在說明「工作許可」的申請流程：由雇主向勞動部提出申請，附上申請書、雇主證明、你的護照影本和勞動契約。外國專業人員聘僱許可期間最長 3 年（特定專業人才最長 5 年），期滿前可申請展延，無次數限制。核准後才能在許可範圍與期間內工作。注意：白領專業人才適用「外國專業人才延攬及僱用法」，規定和藍領不同。',
+    keyInfo:{deadline:'聘僱許可期滿前申請展延', agency:'勞動部勞動力發展署', fee:'審查費以官方公告為準', contact:'勞動部 1955 專線'},
+    documents:[
+      {name:'聘僱許可申請書', reason:'由雇主填寫申請'},
+      {name:'雇主身分證明文件', reason:'證明雇主有資格聘僱'},
+      {name:'外國人護照影本', reason:'證明你的身分'},
+      {name:'勞動契約或聘僱契約', reason:'寫明工作內容、薪水與期間'}
+    ],
+    steps:[
+      {title:'雇主提出申請', detail:'由雇主向勞動部申請聘僱許可，不是你自己申請'},
+      {title:'等待勞動部審查', detail:'約 7–14 個工作天，可查詢進度'},
+      {title:'取得工作許可', detail:'核准後才能開始工作，許可期最長3年（特定人才5年）'},
+      {title:'辦理居留證（如需要）', detail:'工作與居留都合法，才不會有問題'}
+    ],
+    warnings:['只能做許可範圍內的工作，做別的工作算違法','聘僱許可最長3年（特定專業人才5年），期滿前要記得展延','白領專業人才適用「外國專業人才延攬及僱用法」，和藍領規定不同']
+  },
+  fund:{
+    summary:'這份文件在說明「新住民發展基金」相關補助：基金由內政部移民署管理，補助項目包含生活扶助、醫療補助、急難救助、職業訓練、獎助學金等。各縣市依基金自訂計畫，金額因縣市和項目而異，沒有全國統一標準。獎助學金類透過「新住民及其子女培力與獎助（勵）學金系統」(sp.immigration.gov.tw) 線上申請；生活扶助等向各縣市新住民窗口或社會局申請。',
+    keyInfo:{deadline:'依各補助項目公告截止日', agency:'內政部移民署／各縣市政府', fee:'免費申請', contact:'1990 專線／各縣市新住民窗口'},
+    documents:[
+      {name:'申請書', reason:'填寫基本資料與申請項目'},
+      {name:'身分證明文件', reason:'居留證或戶籍資料'},
+      {name:'相關佐證資料', reason:'視申請項目而定，如收入、醫療或就學證明'}
+    ],
+    steps:[
+      {title:'確認符合哪項補助', detail:'獎助學金走線上系統；生活扶助、急難救助找各縣市新住民窗口'},
+      {title:'備齊文件', detail:'依公告清單準備，缺件會被要求補正'},
+      {title:'提出申請', detail:'獎助學金→sp.immigration.gov.tw 線上申請；其他→各縣市政府'},
+      {title:'等待審查與核定', detail:'通過後會收到通知，包含金額與撥款方式'}
+    ],
+    warnings:['各縣市補助項目和金額不同，沒有全國統一標準','獎助學金由內政部移民署主辦，走線上系統(sp.immigration.gov.tw)','生活扶助、急難救助等向各縣市新住民窗口或社會局詢問']
+  },
+  school:{
+    summary:'這份文件在說明「新住民及其子女培力與獎助（勵）學金」：由內政部移民署主辦（不是教育部），對象包含新住民子女就讀高級中等學校（含五專前3年）及以上。項目有優秀獎學金 8,000 元、清寒助學金 8,000 元、特殊才能獎勵金 5,000~10,000 元、證照獎勵金 3,000~50,000 元等。由學校初審後，承辦人登入線上系統(sp.immigration.gov.tw) 上傳申請。',
+    keyInfo:{deadline:'依學校公告期限（通常每年3月）', agency:'內政部移民署（學校初審）', fee:'免費申請', contact:'學校註冊組／1990'},
+    documents:[
+      {name:'申請表', reason:'向學校索取或下載'},
+      {name:'戶口名簿影本', reason:'證明親子關係與設籍狀況'},
+      {name:'相關證明文件', reason:'視項目而定，如成績單、低收入戶證明、證照影本'}
+    ],
+    steps:[
+      {title:'向學校詢問', detail:'找註冊組或輔導室，確認當年度有哪些獎助項目、何時截止'},
+      {title:'備齊文件', detail:'在期限內準備好申請表與證明（成績、低收入戶證明等）'},
+      {title:'交學校初審', detail:'學校承辦人初審後，登入 sp.immigration.gov.tw 線上系統上傳'},
+      {title:'等待核定', detail:'通過後獎助金會撥入指定帳戶或抵繳費用'}
+    ],
+    warnings:['主辦單位是內政部移民署，不是教育部','每年申請時間固定（通常3月），錯過要等明年','獎勵項目多（優秀、清寒、特殊才能、證照），先問學校有哪些']
+  },
+  rent:{
+    summary:'這份文件在說明「300億元中央擴大租金補貼」：115 年度（2026年）申請期間為 1/1~12/31，每月基準補貼 2,000~8,000 元；新婚 2 年內家庭加碼 50%、每多生 1 胎再加碼 50%，40 歲以下單身 1.2 倍。資格為無自有住宅、家庭平均每人每月所得低於規定標準（115年放寬至最低生活費 3.5 倍）。申請以線上為主，或書面郵寄至內政部國土管理署。',
+    keyInfo:{deadline:'115年度 1/1~12/31', agency:'內政部國土管理署', fee:'免費申請', contact:'1990／內政部國土署'},
+    documents:[
+      {name:'申請人身分證明', reason:'身分證或居留證'},
+      {name:'租賃契約', reason:'證明你有在租房子、租金多少'},
+      {name:'戶籍資料或居留證', reason:'證明家庭成員與設籍狀況'},
+      {name:'金融帳戶', reason:'補貼要匯到哪裡'}
+    ],
+    steps:[
+      {title:'確認資格', detail:'無自有住宅＋家庭平均所得低於標準（115年放寬至最低生活費3.5倍）'},
+      {title:'線上申請或書面郵寄', detail:'以線上申請為主，或書面郵寄至內政部國土管理署（不是地方政府）'},
+      {title:'等待審查', detail:'政府會查核住宅與所得資料'},
+      {title:'核定後按月撥款', detail:'通過後每月補貼匯入帳戶，加碼金額不得超過實際租金'}
+    ],
+    warnings:['申請是線上或郵寄國土署，不是向地方政府申請','115年度申請期間 1/1~12/31，新婚家庭加碼50%、每多生1胎再加50%','資料不實會被追回補貼；加碼金額不得超過實際租金']
+  },
+  other:{
+    summary:'這是一份政府公文或法規。連接免費後端之後，我會把它完整翻成白話文與你選擇的語言；現在你可以先用「詞彙小幫手」看懂關鍵字，或參考偵測到的文件類型，找到對應的官方窗口詢問。',
+    keyInfo:{deadline:'以原文為準', agency:'以原文為準', fee:'以原文為準', contact:'1990 專線'},
+    documents:[
+      {name:'身分證明文件', reason:'通常是居留證或身分證'},
+      {name:'申請書', reason:'依文件類型向窗口索取'},
+      {name:'原文提到的其他文件', reason:'留意「檢附」「應備」這些關鍵字'}
+    ],
+    steps:[
+      {title:'先確認文件類型', detail:'看標題或關鍵字，判斷是哪一類業務'},
+      {title:'找到負責單位', detail:'公文上通常會寫，或參考本頁「官方管道」'},
+      {title:'備齊文件提出申請', detail:'有疑問先打 1990 專線確認'},
+      {title:'保留收件證明', detail:'申請後記得留下編號或收據，方便查進度'}
+    ],
+    warnings:['以上為通用建議，實際規定請以政府機關正式公告為準','可使用本頁「公文搜尋」功能查詢最新法規']
+  }
+};
+
+/* ===== 體驗模式引擎（離線示範，僅繁體中文） ===== */
+const GLOSS_SORTED = [...GLOSSARY].sort((a,b)=>b.term.length-a.term.length);
+function applyGlossary(text){
+  let out = esc(text);
+  const found = [];
+  for(const g of GLOSS_SORTED){
+    if(out.includes(g.term)){
+      found.push(g);
+      out = out.split(g.term).join('<mark>' + g.term + '</mark>');
+    }
+  }
+  return {html:out, found};
+}
+function demoAnalyze(text){
+  const type = detectType(text);
+  const tpl = DEMO_TPL[type.id] || DEMO_TPL.other;
+  const {html, found} = applyGlossary(text);
+  let trans = '【體驗示範】這是一篇「' + type.label + '」類的公文。白話翻譯會像這樣：\n' + tpl.summary + '\n';
+  if(found.length){
+    trans += '\n本篇先幫你標出這些難懂詞（黃底）：\n' + found.map(g=>g.term + '＝' + g.plain).join('、') + '。\n';
+  }
+  trans += '\n————— 以下是原文（黃底為已解釋的詞彙）—————\n' + html;
+  const block = {
+    translation: trans,
+    keyInfo: tpl.keyInfo,
+    documents: tpl.documents,
+    steps: tpl.steps,
+    warnings: tpl.warnings,
+    _html: true
+  };
+  return {
+    documentType: type.label,
+    blocks: {'zh-TW': block},
+    demo: true
+  };
+}
+
+
+/* ===== 免費即時翻譯引擎（免金鑰，Google 翻譯） ===== */
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const GT = {
+  'zh-CN':'zh-CN', 'ms-MY':'ms', 'id-ID':'id', 'vi-VN':'vi', 'th-TH':'th',
+  'tl-PH':'tl', 'my-MM':'my', 'km-KH':'km', 'lo-LA':'lo'
+};
+async function mt(text, tl){
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), 20000);
+  try{
+    const url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + tl + '&dt=t&q=' + encodeURIComponent(text);
+    const res = await fetch(url, {signal: ctrl.signal});
+    if(!res.ok) throw new Error('翻譯服務回應 ' + res.status);
+    const data = await res.json();
+    const segs = (data && Array.isArray(data[0])) ? data[0] : [];
+    return segs.map(s => (s && s[0]) ? s[0] : '').join('');
+  }catch(err){
+    if(err.name === 'AbortError') throw new Error('翻譯逾時');
+    throw err;
+  }finally{ clearTimeout(t); }
+}
+function chunkText(text, max=1300){
+  const out = []; let buf = '';
+  const parts = text.split(/(?<=[。！？；\n])/);
+  for(const s of parts){
+    if((buf + s).length > max && buf){ out.push(buf.trim()); buf = s; }
+    else buf += s;
+    if(buf.length > max * 1.6){ out.push(buf.trim()); buf = ''; }
+  }
+  if(buf.trim()) out.push(buf.trim());
+  return out.length ? out : [text];
+}
+async function mtLong(text, tl){
+  const chunks = chunkText(text);
+  const parts = [];
+  for(const c of chunks){ parts.push(await mt(c, tl)); await sleep(150); }
+  return parts.join('\n\n');
+}
+/* 依原文自動抽出重點（期限／金額／單位／聯絡） */
+const AGENCY_MAP = [
+  {k:['移民署','移民'], v:'內政部移民署'},
+  {k:['勞動部','勞發署','就業服務'], v:'勞動部'},
+  {k:['健保','全民健康保險'], v:'衛生福利部中央健康保險署'},
+  {k:['教育部','學校'], v:'教育部／就讀學校'},
+  {k:['公所'], v:'鄉（鎮、市、區）公所'},
+  {k:['縣政府','市政府','市府'], v:'所在地縣（市）政府'},
+  {k:['內政部'], v:'內政部'}
+];
+function extractFacts(text){
+  const clean = text.replace(/\s+/g, ' ');
+  const out = {deadline:'', fee:'', agency:'', contact:''};
+  const dl = [];
+  const dlPats = [
+    /(?:應於|於|至遲於|請於|應在|應自|請在)([^。；\n，,]{1,30}?(?:前|內|止|屆滿前|之次日起|之日起)(?:申請|辦理|提出|完成|補正|檢附)?)/g,
+    /(?:期限|期間|有效期間)(?:屆滿)?([^。；\n，,]{0,8}前)?[^。；\n，,]{0,8}(\d{1,3}\s*(?:日|天|個月|月|年))/g,
+    /(\d{1,3}\s*(?:日|天|個月|月|年))\s*(?:內|前|以上|以下|為限|屆滿)/g
+  ];
+  for(const p of dlPats){
+    let m;
+    while((m = p.exec(clean)) && dl.length < 2){ dl.push((m[1] || m[2] || m[0]).trim()); }
+    if(dl.length >= 2) break;
+  }
+  out.deadline = [...new Set(dl)].join('；');
+  const fee = clean.match(/(?:每月|最高|每期)?(?:補貼|補助|給付|費用|金額)[^。；\n]{0,24}?(?:新臺幣|NT\$|NTD)?[\d,，]+\s*元(?:至[\d,，]+\s*元)?/);
+  out.fee = fee ? fee[0] : '';
+  for(const a of AGENCY_MAP){ if(a.k.some(k => text.includes(k))){ out.agency = a.v; break; } }
+  const c1 = clean.match(/(?:電話|專線|洽詢|聯絡|服務專線|諮詢)[:：]?\s*([0-9０-９\-－—()（） ]{6,22})/);
+  const c2 = clean.match(/(0800[-－—]?\d{3,4}[-－—]?\d{3,4}|1990|1955|0\d{1,2}[-－—]?\d{3,4}[-－—]?\d{3,4})/);
+  out.contact = (c1 ? c1[1].trim() : '') || (c2 ? c2[0] : '') || '';
+  return out;
+}
+function freeKeyInfo(type, facts, tpl){
+  return {
+    deadline: facts.deadline || tpl.keyInfo.deadline || '原文未明確提及',
+    agency: facts.agency || tpl.keyInfo.agency || '原文未明確提及',
+    fee: facts.fee || tpl.keyInfo.fee || '原文未明確提及',
+    contact: facts.contact || tpl.keyInfo.contact || '原文未明確提及'
+  };
+}
+function freeZhSummary(type, facts, tpl){
+  const bits = ['這是一篇「' + type.label + '」類的公文（依內容關鍵字自動分類）。'];
+  bits.push(tpl.summary);
+  if(facts.deadline) bits.push('原文提到的期限：' + facts.deadline + '。');
+  if(facts.fee) bits.push('原文提到的金額：' + facts.fee + '。');
+  if(facts.contact) bits.push('原文提到的聯絡：' + facts.contact + '。');
+  return bits.join('\n');
+}
+function buildStructLines(tpl, facts){
+  const lines = [];
+  (tpl.documents || []).forEach((d, i) => lines.push('D' + (i+1) + '｜' + d.name + '｜' + (d.reason || '')));
+  (tpl.steps || []).forEach((s, i) => lines.push('S' + (i+1) + '｜' + s.title + '｜' + (s.detail || '')));
+  (tpl.warnings || []).forEach(w => lines.push('W｜' + w));
+  return lines;
+}
+function parseStructLines(trans, src){
+  const docs = [], steps = [], warns = [];
+  const n = Math.min(trans.length, src.length);
+  for(let i = 0; i < n; i++){
+    const parts = trans[i].split('｜');
+    const s = src[i] || '';
+    if(s.startsWith('D') && parts.length >= 2){ docs.push({name: (parts[1]||'').trim(), reason: (parts[2]||'').trim()}); }
+    else if(s.startsWith('S') && parts.length >= 2){ steps.push({title: (parts[1]||'').trim(), detail: (parts[2]||'').trim()}); }
+    else if(s.startsWith('W')){ warns.push(parts.slice(1).join('｜').trim() || trans[i].trim()); }
+  }
+  if(!docs.length && src.some(l => l.startsWith('D'))) docs.push({name: (trans[0] || '—').trim(), reason: ''});
+  if(!steps.length && src.some(l => l.startsWith('S'))) steps.push({title: (trans[Math.min(1, trans.length-1)] || '—').trim(), detail: ''});
+  if(!warns.length && src.some(l => l.startsWith('W'))) warns.push((trans[trans.length-1] || '').trim());
+  return {documents: docs, steps: steps, warnings: warns};
+}
+async function runFree(text, langs){
+  if(text.length > 6000) throw new Error('免費即時翻譯單次上限 6,000 字，請分段翻譯；更長的公文建議用 Vercel 後端');
+  const type = detectType(text);
+  const facts = extractFacts(text);
+  const tpl = DEMO_TPL[type.id] || DEMO_TPL.other;
+  const blocks = {};
+  const errs = [];
+  for(const code of langs){
+    try{
+      if(code === 'zh-TW'){
+        const {html, found} = applyGlossary(text);
+        let trans = freeZhSummary(type, facts, tpl);
+        if(found.length){
+          trans += '\n\n難懂詞對照（黃底為原文標記）：\n' + found.map(g => g.term + '＝' + g.plain).join('、') + '。';
+        }
+        trans += '\n\n————— 以下是原文（黃底為已解釋的詞彙）—————\n' + html;
+        blocks[code] = {
+          translation: trans,
+          keyInfo: freeKeyInfo(type, facts, tpl),
+          documents: tpl.documents,
+          steps: tpl.steps,
+          warnings: tpl.warnings,
+          _html: true
+        };
+      }else{
+        const tl = GT[code];
+        const transRaw = await mtLong(text, tl);
+        const srcLines = buildStructLines(tpl, facts);
+        const transLines = (await mt(srcLines.join('\n'), tl)).split('\n');
+        const struct = parseStructLines(transLines, srcLines);
+        blocks[code] = {
+          translation: transRaw,
+          keyInfo: freeKeyInfo(type, facts, tpl),
+          documents: struct.documents,
+          steps: struct.steps,
+          warnings: struct.warnings
+        };
+      }
+    }catch(err){
+      errs.push(LANGS[code].short);
+      blocks[code] = {
+        translation: '（' + LANGS[code].short + ' 翻譯失敗：' + (err.message || '未知錯誤') + '。請檢查網路後重試，或改用體驗模式／Vercel 後端。）',
+        keyInfo: {deadline:'—', agency:'—', fee:'—', contact:'—'},
+        documents: [], steps: [], warnings: []
+      };
+    }
+  }
+  return {documentType: type.label, blocks: blocks, free: true, freeErrs: errs};
+}
+
+/* ===== 語言選擇 ===== */
+function renderLangChips(){
+  $('#langPicker').innerHTML = LANGS_ORDER.map(c=>{
+    const on = APP.selectedLangs.includes(c);
+    return '<button type="button" class="lang-opt' + (on?' active':'') + '" data-lang="' + c + '" role="checkbox" aria-checked="' + on + '">' + esc(LANGS[c].short) + '<small>' + esc(LANGS[c].full) + '</small></button>';
+  }).join('');
+  $('#langCount').textContent = '已選 ' + APP.selectedLangs.length + '／' + MAX_LANGS + ' 種';
+}
+function toggleLang(c){
+  const i = APP.selectedLangs.indexOf(c);
+  if(i >= 0){
+    APP.selectedLangs.splice(i,1);
+  }else{
+    if(APP.selectedLangs.length >= MAX_LANGS){ toast('一次最多選 ' + MAX_LANGS + ' 種語言，可以分批翻譯', true); return; }
+    APP.selectedLangs.push(c);
+  }
+  renderLangChips();
+}
+
+/* ===== 靜態區塊渲染 ===== */
+function renderSampleCards(){
+  $('#sampleCards').innerHTML = Object.entries(SAMPLES).map(([k,s])=>`
+    <div class="sample-card">
+      <span class="tag">${s.type}</span>
+      <h3>${s.title}</h3>
+      <p>${esc(s.text.split('\n').slice(1).join(' ').slice(0,80))}…</p>
+      <button type="button" class="load-sample-btn" data-sample="${k}">載入試試</button>
+    </div>`).join('');
+}
+function renderGuide(){
+  $('#guideGrid').innerHTML = GUIDE.map(g=>`
+    <button type="button" class="guide-card" data-sample="${g.sample}">
+      <span class="g-ico">${GUIDE_ICONS[g.ico]}</span>
+      <h3>${g.title}</h3>
+      <p>${g.desc}</p>
+      <span class="g-cta">載入範例公文<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </button>`).join('');
+}
+function renderGlossary(filter=''){
+  const list = GLOSSARY.filter(g=>!filter || g.term.includes(filter) || g.plain.includes(filter));
+  $('#glossaryGrid').innerHTML = list.length
+    ? list.map(g=>`<div class="glossary-card"><div class="g-head"><b>${esc(g.term)}</b><button class="g-translate-btn" data-term="${esc(g.term)}">翻譯</button></div><span>${esc(g.plain)}</span><div class="g-translations" hidden></div></div>`).join('')
+    : '<div class="glossary-empty">找不到符合「' + esc(filter) + '」的詞彙，按上方「AI 查詞」讓 AI 幫你解釋。</div>';
+}
+/* ===== 載入動畫 ===== */
+const LOAD_LABELS = ['讀懂公文內容…','翻譯成白話文…','整理需要的文件…','規劃下一步…'];
+function startLoading(){
+  $('#loading').hidden = false;
+  $('#loadingSteps').innerHTML = LOAD_LABELS.map((l,i)=>`<div class="loading-step" id="ls${i}"><span class="dot"></span><span class="lbl">${l}</span></div>`).join('');
+  $('#loadingBar').style.width = '0%';
+}
+function setLoadStep(i){
+  LOAD_LABELS.forEach((_,k)=>{
+    const el = $('#ls'+k);
+    if(!el) return;
+    el.classList.toggle('done', k<i);
+    el.classList.toggle('now', k===i);
+    const d = el.querySelector('.dot');
+    if(k<i){ d.innerHTML = CHECK_SVG; d.style.color = 'var(--ink)'; }
+    else { d.innerHTML = ''; d.style.color = ''; }
+  });
+}
+function awaitLoading(ms=1500){
+  return new Promise(res=>{
+    const t0 = performance.now();
+    const bar = $('#loadingBar');
+    const stepMs = ms / LOAD_LABELS.length;
+    let i = 0;
+    setLoadStep(0);
+    const iv = setInterval(()=>{
+      const p = Math.min(100, (performance.now()-t0)/ms*100);
+      bar.style.width = p+'%';
+    }, 60);
+    const timer = setInterval(()=>{ i++; if(i<LOAD_LABELS.length) setLoadStep(i); }, stepMs);
+    setTimeout(()=>{ clearInterval(iv); clearInterval(timer); bar.style.width='100%'; res(); }, ms);
+  });
+}
+function endLoading(){ $('#loading').hidden = true; }
+
+/* ===== 後端呼叫（Vercel 免費代理，金鑰在伺服器） ===== */
+function normalizeResult(d, fallbackType){
+  const str = v => (typeof v==='string' ? v.trim() : '');
+  const blocks = {};
+  const raw = (d && typeof d==='object' && d.blocks && typeof d.blocks==='object') ? d.blocks : {};
+  for(const code of Object.keys(raw)){
+    const b = raw[code] || {};
+    blocks[code] = {
+      translation: str(b.translation) || '（此語言沒有回傳翻譯內容）',
+      keyInfo: {
+        deadline: str(b.keyInfo?.deadline) || '未提及',
+        agency: str(b.keyInfo?.agency) || '未提及',
+        fee: str(b.keyInfo?.fee) || '未提及',
+        contact: str(b.keyInfo?.contact) || '未提及'
+      },
+      documents: Array.isArray(b.documents) ? b.documents.filter(x=>x&&x.name).map(x=>({name:str(x.name), reason:str(x.reason)})).slice(0,6) : [],
+      steps: Array.isArray(b.steps) ? b.steps.filter(x=>x&&x.title).map(x=>({title:str(x.title), detail:str(x.detail)})).slice(0,6) : [],
+      warnings: Array.isArray(b.warnings) ? b.warnings.map(str).filter(Boolean) : []
+    };
+  }
+  return {
+    documentType: str(d?.documentType) || fallbackType,
+    blocks: blocks,
+    demo: false
+  };
+}
+async function callBackend(text, langs){
+  const url = apiBase();
+  const ctrl = new AbortController();
+  const timer = setTimeout(()=>ctrl.abort(), 60000);
+  try{
+    const res = await fetch(url + '/api/translate', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({text: text, langs: langs}),
+      signal: ctrl.signal
+    });
+    let data = null;
+    try{ data = await res.json(); }catch(_){}
+    if(!res.ok) throw new Error(data?.error || '後端回應錯誤（' + res.status + '）');
+    if(!data || !data.ok || !data.result) throw new Error('後端回傳格式錯誤');
+    return normalizeResult(data.result, detectType(text).label);
+  }catch(err){
+    if(err.name === 'AbortError') throw new Error('後端回應逾時（60 秒），請減少語言數量或稍後再試');
+    throw err;
+  }finally{
+    clearTimeout(timer);
+  }
+}
+
+/* ===== 主流程 ===== */
+async function runAnalysis(){
+  const input = $('#docInput').value.trim();
+  if(!input){ toast('請先貼上公文內容，或載入一個範例', true); $('#docInput').focus(); return; }
+  if(input.length < 10){ toast('內容太短了，再多貼一點公文文字', true); $('#docInput').focus(); return; }
+  const langs = [...APP.selectedLangs];
+  if(!langs.length){ toast('請至少選擇一種語言', true); return; }
+  const runBtn = $('#runBtn');
+  runBtn.disabled = true;
+  runBtn.textContent = '翻譯中…';
+  startLoading();
+  try{
+    let result;
+    if(APP.settings.mode === 'vercel'){
+      const p = callBackend(input, langs);
+      await awaitLoading(1000);
+      result = await p;
+    }else if(APP.settings.mode === 'free'){
+      const p = runFree(input, langs);
+      await awaitLoading(900);
+      result = await p;
+    }else{
+      await awaitLoading(1400);
+      result = demoAnalyze(input);
+    }
+    result.langs = langs;
+    APP.lastResult = result;
+    renderResult(result);
+    addHistory(result, input);
+    setTimeout(()=>$('#resultWrap').scrollIntoView({behavior:'smooth', block:'start'}), 60);
+  }catch(err){
+    toast(err.message || '翻譯失敗，請檢查後端設定後再試', true);
+  }finally{
+    runBtn.disabled = false;
+    runBtn.textContent = '翻譯並整理';
+    endLoading();
+  }
+}
+
+/* ===== 結果渲染（語言分頁） ===== */
+const KI_ICONS = {
+  deadline:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+  agency:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>',
+  fee:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15 9.5c0-1.1-1.3-2-3-2s-3 .9-3 2 1 1.6 3 2 3 .9 3 2-1.3 2-3 2-3-.9-3-2"/></svg>',
+  contact:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>'
+};
+const SEC_ICONS = {
+  translation:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/><circle cx="18.5" cy="17.5" r="3.2"/><path d="M18.5 15.5v4M16.5 17.5h4"/></svg>',
+  documents:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+  steps:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  warnings:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>'
+};
+function blockHTML(b, code){
+  const kl = KI_LABELS[code] || KI_LABELS['zh-TW'];
+  const sl = SEC_LABELS[code] || SEC_LABELS['zh-TW'];
+  const ki = b.keyInfo || {};
+  const emptyKi = ['deadline','agency','fee','contact'].filter(k=>{ const v=ki[k]; return !v || v==='未提及' || v==='無明確期限' || v==='以原文為準'; });
+  const kiCards = ['deadline','agency','fee','contact'].map(k=>{
+    const v = ki[k] || '未提及';
+    const isEmpty = emptyKi.includes(k);
+    return '<div class="ki-card"><div class="ki-ico">' + KI_ICONS[k] + '</div><div class="ki-label">' + esc(kl[k]||k) + '</div><div class="ki-val' + (isEmpty?' empty':'') + '">' + esc(v) + '</div></div>';
+  }).join('');
+  const transHTML = b._html ? b.translation : esc(b.translation);
+  const docsHTML = (b.documents && b.documents.length)
+    ? b.documents.map((d,i)=>'<li><span class="doc-num">' + (i+1) + '</span><div><div class="doc-name">' + esc(d.name) + '</div>' + (d.reason?'<div class="doc-reason">' + esc(d.reason) + '</div>':'') + '</div></li>').join('')
+    : '<li><div><div class="doc-name">—</div></div></li>';
+  const stepsHTML = (b.steps && b.steps.length)
+    ? b.steps.map((s,i)=>'<li><span class="step-num">' + (i+1) + '</span><div><div class="step-title">' + esc(s.title) + '</div>' + (s.detail?'<div class="step-detail">' + esc(s.detail) + '</div>':'') + '</div></li>').join('')
+    : '<li><span class="step-num">1</span><div><div class="step-title">—</div></div></li>';
+  const warnHTML = (b.warnings && b.warnings.length)
+    ? b.warnings.map(w=>'<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span>' + esc(w) + '</span></li>').join('')
+    : '';
+  return '<article class="result-block"><h3>' + SEC_ICONS.translation + esc(sl.translation) + '</h3><div class="translation">' + transHTML + '</div></article>'
+    + '<div class="keyinfo-grid">' + kiCards + '</div>'
+    + '<article class="result-block"><h3>' + SEC_ICONS.documents + esc(sl.documents) + '</h3><ol class="doc-list">' + docsHTML + '</ol></article>'
+    + '<article class="result-block"><h3>' + SEC_ICONS.steps + esc(sl.steps) + '</h3><ol class="step-list">' + stepsHTML + '</ol></article>'
+    + (warnHTML ? '<article class="result-block warn-block"><h3>' + SEC_ICONS.warnings + esc(sl.warnings) + '</h3><ul>' + warnHTML + '</ul></article>' : '');
+}
+function renderResult(r){
+  $('#resultWrap').hidden = false;
+  $('#resultType').textContent = r.documentType || '文件類型';
+  const langs = (r.langs && r.langs.length) ? r.langs : Object.keys(r.blocks);
+  $('#resultLang').textContent = langs.length > 2
+    ? langs.slice(0,2).map(c=>LANGS[c]?.short||c).join('、') + ' 等 ' + langs.length + ' 種語言'
+    : langs.map(c=>LANGS[c]?.short||c).join('、');
+  const dn = $('#demoNote'), fn = $('#freeNote');
+  if(r.demo){
+    dn.hidden = false;
+    $('#demoNoteText').textContent = '目前是體驗模式（離線示範）：只示範繁體中文。切到「免費即時翻譯」即可立刻翻譯你選的語言，或架好 Vercel 後端獲得更高品質結果。';
+  }else{ dn.hidden = true; }
+  if(r.free){
+    fn.hidden = false;
+    let msg = '免費即時翻譯已開啟：翻譯由 Google 翻譯提供，品質以理解大意為準；「文件／步驟」為自動整理的建議，關鍵資訊保留中文方便你出示給承辦窗口。需要更準確的白話整理，可切到「Vercel 免費後端」。';
+    if(r.freeErrs && r.freeErrs.length){ msg += ' 以下語言翻譯失敗：' + r.freeErrs.join('、') + '，請檢查網路後重試。'; }
+    $('#freeNoteText').textContent = msg;
+  }else{ fn.hidden = true; }
+  const tabBar = $('#resultTabs');
+  tabBar.innerHTML = langs.map((c,i)=>'<button type="button" class="tab-btn' + (i===0?' active':'') + '" data-tab="' + c + '" role="tab" aria-selected="' + (i===0) + '">' + esc(LANGS[c]?.short||c) + '</button>').join('');
+  const panels = $('#langPanels');
+  panels.innerHTML = langs.map((c,i)=>{
+    const b = r.blocks[c];
+    if(!b){
+      const name = LANGS[c]?.full || c;
+      return '<div class="lang-panel' + (i===0?' active':'') + '" data-panel="' + c + '"><div class="panel-empty">此語言的內容尚未產生。<br>' + esc(name) + ' 需要切到「免費即時翻譯」或「Vercel 免費後端」才能翻譯（體驗模式只示範繁體中文）。</div></div>';
+    }
+    return '<div class="lang-panel' + (i===0?' active':'') + '" data-panel="' + c + '">' + blockHTML(b, c) + '</div>';
+  }).join('');
+  tabBar.querySelectorAll('.tab-btn').forEach(btn=>btn.addEventListener('click',()=>{
+    tabBar.querySelectorAll('.tab-btn').forEach(x=>{ x.classList.remove('active'); x.setAttribute('aria-selected','false'); });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    panels.querySelectorAll('.lang-panel').forEach(p=>p.classList.toggle('active', p.dataset.panel===btn.dataset.tab));
+  }));
+}
+
+/* ===== 歷史紀錄 ===== */
+function addHistory(result, input){
+  const item = {
+    id: Date.now(),
+    time: formatTime(Date.now()),
+    type: result.documentType,
+    langs: (result.langs && result.langs.length) ? result.langs : Object.keys(result.blocks),
+    snippet: input.replace(/\s+/g,' ').slice(0,56),
+    result: result
+  };
+  APP.history.unshift(item);
+  APP.history = APP.history.slice(0,20);
+  try{ localStorage.setItem('bt_history', JSON.stringify(APP.history)); }catch(_){}
+  renderHistory();
+}
+function renderHistory(){
+  const list = $('#historyList');
+  if(!APP.history.length){ list.innerHTML = '<div class="history-empty">還沒有歷史紀錄。翻譯過一次之後，會自動存在這裡（只存你這個瀏覽器）。</div>'; return; }
+  list.innerHTML = APP.history.map(h=>{
+    const l = (h.langs||['zh-TW']).map(c=>LANGS[c]?.short||c).join('+');
+    return '<div class="history-item"><div class="h-info"><div class="h-title">' + esc(h.type) + ' · ' + esc(l) + '</div><div class="h-meta">' + h.time + '　' + esc(h.snippet) + '</div></div><button type="button" class="h-view" data-view="' + h.id + '">檢視</button><button type="button" class="h-del" data-del="' + h.id + '">刪除</button></div>';
+  }).join('');
+}
+function migrateResult(old){
+  // 相容舊版單語結果（若本地還留著舊資料）
+  const b = {
+    translation: old.translation || '',
+    keyInfo: old.keyInfo || {},
+    documents: old.documents || [],
+    steps: old.steps || [],
+    warnings: old.warnings || [],
+    _html: !!(old.demo && old.translation)
+  };
+  return {documentType: old.documentType || '文件類型', blocks:{'zh-TW': b}, demo: true};
+}
+function loadHistoryItem(id){
+  const h = APP.history.find(x=>x.id===id);
+  if(!h) return;
+  const r = h.result;
+  const result = (r && r.blocks) ? r : migrateResult(r||{});
+  if(!result.langs) result.langs = (h.langs||['zh-TW']);
+  APP.lastResult = result;
+  renderResult(result);
+  closeModal('historyModal');
+  setTimeout(()=>$('#resultWrap').scrollIntoView({behavior:'smooth', block:'start'}), 60);
+}
+
+/* ===== 複製／下載 ===== */
+function secLabel(code, key){ return (SEC_LABELS[code]||SEC_LABELS['zh-TW'])[key]; }
+function buildMarkdown(r){
+  const L = ['# ' + (r.documentType||'翻譯結果'), ''];
+  const langs = (r.langs && r.langs.length) ? r.langs : Object.keys(r.blocks);
+  langs.forEach((c,idx)=>{
+    const b = r.blocks[c] || {};
+    if(idx > 0) L.push('', '---', '');
+    L.push('## ' + (LANGS[c]?.full || c));
+    if(!b.translation){ L.push('（此語言內容尚未產生）'); return; }
+    L.push('');
+    L.push('### ' + secLabel(c,'translation'));
+    L.push((b.translation||'').replace(/<[^>]+>/g,''));
+    const kl = KI_LABELS[c]||KI_LABELS['zh-TW'];
+    L.push('', '### 關鍵資訊');
+    L.push('- ' + kl.deadline + '：' + (b.keyInfo?.deadline||'未提及'));
+    L.push('- ' + kl.agency + '：' + (b.keyInfo?.agency||'未提及'));
+    L.push('- ' + kl.fee + '：' + (b.keyInfo?.fee||'未提及'));
+    L.push('- ' + kl.contact + '：' + (b.keyInfo?.contact||'未提及'));
+    L.push('', '### ' + secLabel(c,'documents'));
+    (b.documents||[]).forEach((d,i)=>L.push((i+1) + '. **' + d.name + '**' + (d.reason ? '：' + d.reason : '')));
+    L.push('', '### ' + secLabel(c,'steps'));
+    (b.steps||[]).forEach((s,i)=>L.push((i+1) + '. **' + s.title + '**' + (s.detail ? '：' + s.detail : '')));
+    if(b.warnings && b.warnings.length){
+      L.push('', '### ' + secLabel(c,'warnings'));
+      b.warnings.forEach(w=>L.push('- ' + w));
+    }
+  });
+  L.push('', '---', '*本結果由「公文白話通」產生，僅供輔助理解，不構成法律意見，實際以政府機關正式公告為準。*');
+  return L.join('\n');
+}
+async function copyResult(){
+  if(!APP.lastResult){ toast('還沒有可以複製的結果', true); return; }
+  const md = buildMarkdown(APP.lastResult);
+  try{
+    await navigator.clipboard.writeText(md);
+    toast('已複製完整結果');
+  }catch(_){
+    const ta = document.createElement('textarea');
+    ta.value = md;
+    ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); toast('已複製完整結果'); }
+    catch(e){ toast('複製失敗，請手動選取文字', true); }
+    ta.remove();
+  }
+}
+function downloadResult(){
+  if(!APP.lastResult){ toast('還沒有可以下載的結果', true); return; }
+  const blob = new Blob(['\ufeff' + buildMarkdown(APP.lastResult)], {type:'text/markdown;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '公文白話通_' + (APP.lastResult.documentType||'翻譯結果') + '.md';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+  toast('已下載 .md 檔案');
+}
+
+/* ===== 後端設定 Modal ===== */
+function openSettings(){
+  $('#modeSel').value = APP.settings.mode;
+  $('#vercelUrl').value = APP.settings.vercelUrl;
+  openModal('settingsModal');
+}
+function saveSettings(){
+  const s = {
+    mode: $('#modeSel').value,
+    vercelUrl: $('#vercelUrl').value.trim()
+  };
+  // vercelUrl 可留空：Vercel 走同源，GitHub Pages／本機檔案會自動改用線上後端
+  APP.settings = s;
+  try{ localStorage.setItem('bt_settings', JSON.stringify(s)); }catch(_){}
+  updateModePill();
+  closeModal('settingsModal');
+  toast('設定已儲存');
+}
+async function testConnection(){
+  if($('#modeSel').value === 'demo'){
+    const s = Object.assign({}, APP.settings, {mode:'demo'});
+    toast('體驗模式不需要測試；切到「Vercel 免費後端」再測試');
+    return;
+  }
+  if($('#modeSel').value === 'free'){
+    toast('免費即時翻譯不需要測試；貼上公文直接按「翻譯並整理」即可');
+    return;
+  }
+  let url = $('#vercelUrl').value.trim().replace(/\/+$/,'');
+  if(!url) url = apiBase();
+  const btn = $('#testBtn');
+  btn.disabled = true;
+  btn.textContent = '測試中…';
+  try{
+    const ctrl = new AbortController();
+    const timer = setTimeout(()=>ctrl.abort(), 20000);
+    try{
+      const res = await fetch(url + '/api/translate', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({text:'測試連線。', langs:['zh-TW']}),
+        signal: ctrl.signal
+      });
+      let data = null; try{ data = await res.json(); }catch(_){}
+      if(res.ok && data && data.ok){ toast('連線成功！後端已就緒，可以開始翻譯'); }
+      else{ toast((data?.error || ('連線失敗（' + res.status + '）')) + '——若顯示「尚未設定金鑰」，請到 Vercel 後台加環境變數', true); }
+    }finally{ clearTimeout(timer); }
+  }catch(e){
+    toast('連線失敗：' + (e.name==='AbortError' ? '逾時' : e.message) + '，請確認網址是「https://…vercel.app」', true);
+  }finally{
+    btn.disabled = false;
+    btn.textContent = '測試連線';
+  }
+}
+
+/* ===== 互動與初始化 ===== */
+function updateMeta(){
+  const input = $('#docInput').value;
+  $('#charCount').textContent = input.length + ' 字';
+  const t = input.trim() ? detectType(input) : {label:'尚未偵測'};
+  $('#detectChip').innerHTML = '文件類型：<b>' + esc(t.label) + '</b>';
+}
+function loadSample(key){
+  const s = SAMPLES[key];
+  if(!s){ toast('找不到這個範例', true); return; }
+  $('#docInput').value = s.text;
+  updateMeta();
+  $('#tool').scrollIntoView({behavior:'smooth', block:'start'});
+  $('#docInput').focus();
+  toast('已載入範例「' + s.title + '」，按下「翻譯並整理」試試');
+}
+let metaTimer;
+function bindEvents(){
+  $('#langPicker').addEventListener('click', e=>{
+    const b = e.target.closest('[data-lang]');
+    if(b) toggleLang(b.dataset.lang);
+  });
+  $('#quickCommonBtn').addEventListener('click', ()=>{
+    APP.selectedLangs = [...QUICK_COMMON];
+    renderLangChips();
+    toast('已選常用 6 種：繁中、馬來、印尼、越南、泰、菲律賓');
+  });
+  $('#quickClearBtn').addEventListener('click', ()=>{
+    APP.selectedLangs = [];
+    renderLangChips();
+  });
+  $('#docInput').addEventListener('input', ()=>{
+    clearTimeout(metaTimer);
+    metaTimer = setTimeout(updateMeta, 250);
+  });
+  $('#runBtn').addEventListener('click', runAnalysis);
+  document.addEventListener('click', e=>{
+    const b = e.target.closest('[data-sample]');
+    if(b) loadSample(b.dataset.sample);
+  });
+  $('#settingsBtn').addEventListener('click', openSettings);
+  $('#saveSettingsBtn').addEventListener('click', saveSettings);
+  $('#testBtn').addEventListener('click', testConnection);
+  $('#historyBtn').addEventListener('click', ()=>{ renderHistory(); openModal('historyModal'); });
+  $('#clearHistoryBtn').addEventListener('click', ()=>{
+    APP.history = [];
+    try{ localStorage.setItem('bt_history','[]'); }catch(_){}
+    renderHistory();
+    toast('歷史紀錄已清空');
+  });
+  $('#historyList').addEventListener('click', e=>{
+    const v = e.target.closest('[data-view]');
+    if(v) loadHistoryItem(Number(v.dataset.view));
+    const d = e.target.closest('[data-del]');
+    if(d){
+      APP.history = APP.history.filter(x=>x.id!==Number(d.dataset.del));
+      try{ localStorage.setItem('bt_history', JSON.stringify(APP.history)); }catch(_){}
+      renderHistory();
+    }
+  });
+  $('#copyBtn').addEventListener('click', copyResult);
+  $('#downloadBtn').addEventListener('click', downloadResult);
+  $$('.modal-close').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));
+  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));
+  $$('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{ if(e.target===o) closeModal(o.id); }));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){ closeModal('settingsModal'); closeModal('historyModal'); }
+  });
+  $('#glossarySearch').addEventListener('input', e=>renderGlossary(e.target.value.trim()));
+  $('#glossaryAiBtn').addEventListener('click', glossaryAiLookup);
+  $('#glossarySearch').addEventListener('keydown', e=>{ if(e.key==='Enter') glossaryAiLookup(); });
+  $('#glossaryGrid').addEventListener('click', e=>{
+    const btn = e.target.closest('.g-translate-btn');
+    if(!btn) return;
+    const card = btn.closest('.glossary-card');
+    const trans = card.querySelector('.g-translations');
+    if(trans.hidden){ trans.hidden=false; btn.classList.add('active'); btn.textContent='收起'; loadGlossTranslations(btn.dataset.term, trans); }
+    else{ trans.hidden=true; btn.classList.remove('active'); btn.textContent='翻譯'; }
+  });
+  $('#searchBtn').addEventListener('click', doSearch);
+  $('#searchInput').addEventListener('keydown', e=>{ if(e.key==='Enter') doSearch(); });
+  $('#searchCats').addEventListener('click', e=>{
+    const c = e.target.closest('.cat-chip');
+    if(!c) return;
+    $$('#searchCats .cat-chip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    currentSearchCat = c.dataset.cat;
+  });
+}
+
+/* ===== 公文搜尋功能 ===== */
+const SEARCH_CATS = {
+  all:{label:'全部', sites:[]},
+  law:{label:'法規', sites:['law.moj.gov.tw']},
+  gazette:{label:'公文公告', sites:['gazette.nat.gov.tw']},
+  immigration:{label:'移民', sites:['immigration.gov.tw']},
+  health:{label:'健保', sites:['nhi.gov.tw']},
+  labor:{label:'勞動', sites:['mol.gov.tw']},
+  education:{label:'教育', sites:['edu.tw']},
+  interior:{label:'內政', sites:['moi.gov.tw']}
+};
+const PORTALS = [
+  {name:'全國法規資料庫（法務部）', desc:'查法律與命令條文', url:q=>'https://law.moj.gov.tw/LawClass/LawSearch.aspx?ty=ALL&kw='+encodeURIComponent(q)},
+  {name:'行政院公報資訊網', desc:'查最新公文與公告', url:q=>'https://gazette.nat.gov.tw/egFront/search.do?keyword='+encodeURIComponent(q)},
+  {name:'Google 站內搜尋（政府網站）', desc:'site:gov.tw 全站搜尋', url:q=>'https://www.google.com/search?q=site%3Agov.tw+'+encodeURIComponent(q)},
+  {name:'內政部移民署', desc:'居留、入出國相關', url:q=>'https://www.google.com/search?q=site%3Aimmigration.gov.tw+'+encodeURIComponent(q)},
+  {name:'衛生福利部健保署', desc:'健保相關', url:q=>'https://www.google.com/search?q=site%3Anhi.gov.tw+'+encodeURIComponent(q)},
+  {name:'勞動部', desc:'工作、勞動相關', url:q=>'https://www.google.com/search?q=site%3Amol.gov.tw+'+encodeURIComponent(q)},
+  {name:'教育部', desc:'教育、就學相關', url:q=>'https://www.google.com/search?q=site%3Aedu.tw+'+encodeURIComponent(q)},
+  {name:'內政部', desc:'戶政、租屋、土地相關', url:q=>'https://www.google.com/search?q=site%3Amoi.gov.tw+'+encodeURIComponent(q)}
+];
+let currentSearchCat = 'all';
+function renderPortals(q){
+  $('#searchPortals').innerHTML = '<h4>官方搜尋入口（點擊直接在官方網站搜尋）</h4><div class="portal-grid">' +
+    PORTALS.map(p=>'<a class="portal-card" href="'+p.url(q)+'" target="_blank" rel="noopener"><b>'+esc(p.name)+'</b><span>'+esc(p.desc)+'</span></a>').join('') +
+    '</div>';
+}
+async function doSearch(){
+  const q = $('#searchInput').value.trim();
+  if(!q){ toast('請輸入搜尋關鍵字', true); return; }
+  $('#searchResults').hidden = false;
+  $('#searchAnswer').hidden = true;
+  $('#searchSources').hidden = true;
+  $('#searchAnswer').textContent = '';
+  $('#searchSources').innerHTML = '';
+  renderPortals(q);
+  if(APP.settings.mode === 'vercel'){
+    $('#searchLoading').hidden = false;
+    try{
+      const url = apiBase();
+      const res = await fetch(url + '/api/search', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({query: q, category: currentSearchCat})
+      });
+      const data = await res.json();
+      if(data && data.ok && data.result){
+        if(data.result.answer){
+          $('#searchAnswer').hidden = false;
+          $('#searchAnswer').textContent = data.result.answer;
+        }
+        if(data.result.sources && data.result.sources.length){
+          $('#searchSources').hidden = false;
+          $('#searchSources').innerHTML = '<h4>參考出處</h4>' + data.result.sources.map(s=>'<div class="source-item"><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title)+'</a><p>'+esc(s.snippet||'')+'</p></div>').join('');
+        }
+        if(!data.result.answer && (!data.result.sources || !data.result.sources.length)){
+          toast('AI 沒有找到相關資料，請參考下方官方入口', true);
+        }
+      }else{
+        toast((data && data.error) ? data.error : 'AI 搜尋失敗，請參考下方官方入口', true);
+      }
+    }catch(e){
+      toast('AI 搜尋失敗：' + e.message + '，請參考下方官方入口', true);
+    }finally{
+      $('#searchLoading').hidden = true;
+    }
+  }
+}
+
+
+/* ===== 詞彙小幫手：多語翻譯＋AI 查詞 ===== */
+const GLOSS_LANGS = [
+  {code:'zh-CN', label:'簡中', gt:'zh-CN'},
+  {code:'ms-MY', label:'馬來', gt:'ms'},
+  {code:'id-ID', label:'印尼', gt:'id'},
+  {code:'vi-VN', label:'越南', gt:'vi'},
+  {code:'th-TH', label:'泰語', gt:'th'},
+  {code:'tl-PH', label:'菲律賓', gt:'tl'},
+  {code:'my-MM', label:'緬甸', gt:'my'},
+  {code:'km-KH', label:'高棉', gt:'km'},
+  {code:'lo-LA', label:'寮國', gt:'lo'}
+];
+const GLOSS_CACHE = {};
+function renderGlossTranslations(results){
+  return GLOSS_LANGS.map(l=>'<div class="gai-lang"><b>'+l.label+'</b>'+esc(results[l.code]||'—')+'</div>').join('');
+}
+async function loadGlossTranslations(term, container){
+  if(GLOSS_CACHE[term]){
+    container.innerHTML = renderGlossTranslations(GLOSS_CACHE[term]);
+    return;
+  }
+  container.innerHTML = '<div class="g-loading">翻譯中，請稍候…</div>';
+  const results = {};
+  for(const lang of GLOSS_LANGS){
+    try{ results[lang.code] = await mt(term, lang.gt); }
+    catch(_){ results[lang.code] = '—'; }
+    container.innerHTML = renderGlossTranslations(results);
+    await sleep(120);
+  }
+  GLOSS_CACHE[term] = results;
+}
+async function glossaryAiLookup(){
+  const term = $('#glossarySearch').value.trim();
+  if(!term){ toast('請輸入要查的詞', true); return; }
+  const box = $('#glossaryAiResult');
+  box.hidden = false;
+  box.innerHTML = '<div class="g-loading">AI 查詞中…</div>';
+  box.scrollIntoView({behavior:'smooth', block:'nearest'});
+  if(APP.settings.mode === 'vercel'){
+    try{
+      const url = apiBase();
+      const res = await fetch(url + '/api/glossary', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({term: term})
+      });
+      const data = await res.json();
+      if(data && data.ok && data.result){
+        box.innerHTML = renderAiGlossResult(term, data.result);
+        return;
+      }
+      toast((data && data.error) ? data.error + '，改用翻譯模式' : 'AI 查詞失敗，改用翻譯模式', true);
+    }catch(e){
+      toast('AI 查詞失敗，改用翻譯模式：' + e.message, true);
+    }
+  }
+  await glossaryFreeLookup(term, box);
+}
+async function glossaryFreeLookup(term, box){
+  box.innerHTML = '<div class="gai-head"><b class="gai-term">'+esc(term)+'</b><span class="gai-badge">翻譯</span></div>' +
+    '<div class="gai-plain">以下為這個詞的 9 語翻譯。接 Vercel 後端可獲得 AI 白話解釋與例句。</div>' +
+    '<div class="gai-translations" id="gaiTrans"></div>';
+  const transBox = $('#gaiTrans');
+  const results = {};
+  for(const lang of GLOSS_LANGS){
+    try{ results[lang.code] = await mt(term, lang.gt); }
+    catch(_){ results[lang.code] = '—'; }
+    transBox.innerHTML = renderGlossTranslations(results);
+    await sleep(120);
+  }
+}
+function renderAiGlossResult(term, r){
+  let html = '<div class="gai-head"><b class="gai-term">'+esc(term)+'</b><span class="gai-badge">AI 查詞</span></div>';
+  if(r.plain) html += '<div class="gai-plain">'+esc(r.plain)+'</div>';
+  if(r.example) html += '<div class="gai-example">例句：'+esc(r.example)+'</div>';
+  if(r.translations) html += '<div class="gai-translations">'+renderGlossTranslations(r.translations)+'</div>';
+  return html;
+}
+
+function init(){
+  updateModePill();
+  renderLangChips();
+  renderSampleCards();
+  renderGuide();
+  renderGlossary();
+  renderHistory();
+  bindEvents();
+  updateMeta();
+}
+init();
+</script>
+</body>
+</html>

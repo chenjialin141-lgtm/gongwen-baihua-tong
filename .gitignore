@@ -1,0 +1,14 @@
+# Vercel
+.vercel/
+
+# 依賴
+node_modules/
+
+# 自檢截圖與暫存
+_shots/
+_*.py
+*.log
+
+# 系統檔案
+.DS_Store
+Thumbs.db
